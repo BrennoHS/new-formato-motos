@@ -66,36 +66,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-/* parallax */
-
-@layer utilities {
-  .drop-shadow-green-glow {
-    filter: drop-shadow(0 0 10px rgba(142, 197, 77, 0.5));
-  }
-
-  .mySwiper .swiper-pagination-bullet {
-    background: #A3D068;
-  }
-
-  .mySwiper .swiper-pagination-bullet-active {
-    background: #6F9E3C;
-  }
-}
-
-/* Responsive typography */
-h2 {
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
-}
-
-p {
-  font-size: clamp(1rem, 3vw, 1.125rem);
-}
-
-/* Fallback for browsers that don't support background-attachment: fixed */
-@supports not (background-attachment: fixed) {
-  section[style*="background-attachment: fixed"] {
-    background-attachment: scroll;
-    background-position: center top;
-  }
-}
