@@ -21,8 +21,16 @@ function HomeContent() {
     <main className="w-full">
       {/* Hero Section */}
       <motion.section
-        className="bg-gradient-to-br from-[#0d2a2c] to-[#1a1a1a] text-white py-20 w-full h-full"
-      >
+  className="bg-gradient-to-br from-[#0d2a2c] to-[#1a1a1a] text-white py-20 w-full h-full"
+  animate={{
+    background: [
+      "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 100%)",
+      "linear-gradient(135deg, #1a1a1a 0%, #0d2a2c 100%)",
+      "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 100%)",
+    ],
+  }}
+  transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+>
         <div className="w-full px-4 text-center">
           <motion.img
             src={formatoImg}
@@ -35,12 +43,12 @@ function HomeContent() {
             className="text-xl md:text-2xl mb-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
           >
             Descubra a liberdade das motos elétricas de alta performance
           </motion.p>
           <motion.a
-            href="#explore"
+            href="./modelos"
             className="inline-block bg-[#8ec54d] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#6f9e3c] hover:text-white transition-transform duration-200 ease-in-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -92,9 +100,9 @@ function HomeContent() {
         viewport={{ once: true }}
         variants={sectionVariants}
       >
-        <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        <div id="maisvendidas"  className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-8 text-white">Mais vendidas</h2>
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-3/4 sm:w-full mx-auto">
             {[
               { img: moto1, title: "Modelo Volt", text: "Perfeito para a cidade, com autonomia de até 150 km.", href: "#volt" },
               { img: moto2, title: "Modelo Spark", text: "Alta performance para aventuras urbanas e além.", href: "#spark" },

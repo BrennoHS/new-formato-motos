@@ -60,7 +60,7 @@ export default function Navbar() {
             src={formatoImg}
             className="h-16 md:h-20 w-auto object-contain cursor-pointer transition-all duration-300 ease-in-out hover:drop-shadow-green-glow"
             alt="Logotipo Formato Motos"
-            whileHover={{ scale: 1.05, rotate: 2 }}
+            whileHover={{ scale: 1.05 }}
             loading="lazy"
           />
         </Link>
