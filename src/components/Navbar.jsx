@@ -40,7 +40,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-full w-full">
         <Link to="/" className="text-2xl font-bold text-green-400">
-          <img className="h-28 w-auto object-contain" src={formatoImg} alt="Logotipo Formato Motos" />
+          <img className="h-28 w-auto object-contain cursor-pointer transition-all duration-300 ease-in-out hover:drop-shadow-green-glow" src={formatoImg} alt="Logotipo Formato Motos" />
         </Link>
 
         {/* Desktop */}
