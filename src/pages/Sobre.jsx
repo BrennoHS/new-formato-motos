@@ -1,8 +1,7 @@
-export default function Sobre() {
+import AboutContent from "../components/AboutContent"
+
+export default function About() {
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h1>Sobre Nós</h1>
-      <p>Informações sobre a empresa.</p>
-    </div>
+    <AboutContent></AboutContent>
   )
 }
