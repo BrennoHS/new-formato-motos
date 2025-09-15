@@ -1,74 +1,157 @@
-import { useState, useEffect } from "react" // NOVO: importar useEffect
-import { Link } from "react-router-dom"
-import { Menu, X } from "lucide-react"
-import formatoImg from "../assets/formato.png"
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import formatoImg from "../assets/formato.png";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollPercent, setScrollPercent] = useState(0);
+  const location = useLocation();
 
-  // estados pro scroll
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  // -----------------------------------------
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-  // detectar o scroll
   useEffect(() => {
     const controlNavbar = () => {
-      // "buffer" para não esconder em scrolls mínimos
-      if (window.scrollY > lastScrollY && window.scrollY > 100) { 
-        setIsVisible(false) // Rola pra baixo -> esconde
-      } else {
-        setIsVisible(true) // Rola pra cima -> mostra
-      }
-      setLastScrollY(window.scrollY)
-    }
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
 
-    window.addEventListener("scroll", controlNavbar)
-    return () => {
-      window.removeEventListener("scroll", controlNavbar)
-    }
-  }, [lastScrollY])
+      if (scrollTop > lastScrollY && scrollTop > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      setLastScrollY(scrollTop);
+      setScrollPercent(scrollPercent);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
+
+  const menuVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.2, ease: "easeIn" } },
+  };
+
+  const navItems = [
+    { name: "Início", path: "/" },
+    { name: "Sobre", path: "/sobre" },
+    { name: "Modelos", path: "/modelos" },
+    { name: "Assistência", path: "/assistencia" },
+    { name: "Unidades", path: "/unidades" },
+  ];
+
   return (
-    // classes dinamicas
-    <nav 
+    <nav
       className={`
-        bg-[#1a1a1a] text-white fixed w-full z-50 shadow-md h-26
-        transition-transform duration-300 ease-in-out
-        ${isVisible ? 'translate-y-0' : '-translate-y-full'}
+        bg-[#1a1a1a] text-white fixed w-full z-50 shadow-soft h-20 md:h-24
+        transition-transform duration-500 ease-in-out
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-full w-full">
-        <Link to="/" className="text-2xl font-bold text-green-400">
-          <img className="h-28 w-auto object-contain cursor-pointer transition-all duration-300 ease-in-out hover:drop-shadow-green-glow" src={formatoImg} alt="Logotipo Formato Motos" />
+      <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center h-full w-full">
+        <Link to="/" className="text-2xl font-bold text-[#A3D068]">
+          <motion.img
+            src={formatoImg}
+            className="h-16 md:h-20 w-auto object-contain cursor-pointer transition-all duration-300 ease-in-out hover:drop-shadow-green-glow"
+            alt="Logotipo Formato Motos"
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            loading="lazy"
+          />
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex space-x-12 text-lg">
-          <Link to="/" className="hover:text-[#8ec54d] transition-transform duration-50 hover:scale-105">Início</Link>
-          <Link to="/sobre" className="hover:text-[#8ec54d] transition-transform duration-50 hover:scale-105">Sobre</Link>
-          <Link to="/modelos" className="hover:text-[#8ec54d] transition-transform duration-50 hover:scale-105">Modelos</Link>
-          <Link to="/assistencia" className="hover:text-[#8ec54d] transition-transform duration-50 hover:scale-105">Assistência</Link>
-          <Link to="/unidades" className="hover:text-[#8ec54d] transition-transform duration-50 hover:scale-105">Unidades</Link>
-          <Link to="/contato" className="hover:text-[#8ec54d] transition-transform duration-50 hover:scale-105">Contato</Link>
+        <div className="hidden md:flex space-x-10 text-base font-medium items-center">
+          {navItems.map((item, index) => (
+            <motion.div key={index} whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+              <Link
+                to={item.path}
+                className={`relative hover:text-[#A3D068] transition-colors duration-200 focus:outline-none ${
+                  location.pathname === item.path ? "text-[#A3D068] font-semibold" : ""
+                }`}
+              >
+                {item.name}
+                {location.pathname === item.path && (
+                  <motion.span
+                    className="absolute left-0 bottom-[-4px] w-full h-[2px] bg-[#A3D068]"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </Link>
+            </motion.div>
+          ))}
+          <motion.a
+            href="/contato"
+            className="inline-block bg-[#A3D068] text-black font-semibold py-2 px-4 rounded-lg hover:bg-[#6F9E3C] hover:text-[#FAFAFA] transition duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Contato
+          </motion.a>
         </div>
 
         {/* Mobile */}
-        <button className="md:hidden" onClick={toggleMenu}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        <button
+          className="md:hidden"
+          onClick={toggleMenu}
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={isOpen}
+        >
+          <motion.div whileTap={{ scale: 0.9 }}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </motion.div>
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-[#1a1a1a] px-6 pb-4 space-y-6 text-center">
-          <Link to="/" onClick={toggleMenu} className="block hover:text-[#8ec54d]">Início</Link>
-          <Link to="/sobre" onClick={toggleMenu} className="block hover:text-[#8ec54d]">Sobre</Link>
-          <Link to="/modelos" onClick={toggleMenu} className="block hover:text-[#8ec54d]">Modelos</Link>
-          <Link to="/assistencia" onClick={toggleMenu} className="block hover:text-[#8ec54d]">Assistência</Link>
-          <Link to="/unidades" onClick={toggleMenu} className="block hover:text-[#8ec54d]">Unidades</Link>
-          <Link to="/contato" onClick={toggleMenu} className="block hover:text-[#8ec54d]">Contato</Link>
-        </div>
-      )}
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="md:hidden bg-[#1a1a1a] px-6 pb-6 pt-4 space-y-4 text-center"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
+          >
+            {navItems.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, x: -20 },
+                  visible: { opacity: 1, x: 0, transition: { delay: index * 0.1 } },
+                }}
+              >
+                <Link
+                  to={item.path}
+                  onClick={toggleMenu}
+                  className={`block text-lg py-2 hover:text-[#A3D068] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#A3D068] rounded ${
+                    location.pathname === item.path ? "text-[#A3D068] font-semibold" : ""
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* barra de progresso do scroll */}
+      <div className="fixed top-20 md:top-24 left-0 w-full h-1 bg-[#2a2a2a] z-50">
+        <motion.div
+          className="h-full bg-[#A3D068]"
+          initial={{ width: 0 }}
+          animate={{ width: `${scrollPercent}%` }}
+          transition={{ duration: 0.3 }}
+        />
+      </div>
     </nav>
-  )
+  );
 }
