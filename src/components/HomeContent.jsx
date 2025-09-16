@@ -90,28 +90,24 @@ function HomeContent() {
       img: moto3, 
       title: "Modelo Volt", 
       text: "Perfeito para a cidade, com autonomia de até 150 km e design compacto.", 
-      price: "R$ 12.990",
       href: "#volt" 
     },
     { 
       img: moto3, 
       title: "Modelo Spark", 
       text: "Alta performance para aventuras urbanas e além, com tecnologia de ponta.", 
-      price: "R$ 18.990",
       href: "#spark" 
     },
     { 
       img: moto3, 
       title: "Modelo Thunder", 
       text: "Potência máxima para os amantes de velocidade e adrenalina.", 
-      price: "R$ 24.990",
       href: "#thunder" 
     },
     { 
       img: moto3, 
       title: "Modelo Storm", 
       text: "Edição limitada com recursos premium e design exclusivo.", 
-      price: "R$ 32.990",
       href: "#storm" 
     },
   ];
@@ -269,7 +265,7 @@ function HomeContent() {
                 return (
                   <motion.div
                     key={index}
-                    className="bg-white/95 backdrop-blur-sm p-8 sm:p-10 rounded-2xl shadow-xl text-center group hover:bg-white transition-all duration-300"
+                    className="bg-white/95 backdrop-blur-sm p-8 sm:p-10 rounded-2xl shadow-xl text-center group hover:bg-white"
                     variants={cardVariants}
                     whileHover={{ 
                       scale: 1.05,
@@ -343,9 +339,6 @@ function HomeContent() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     whileHover={{ scale: 1.1 }}
                   />
-                  <div className="absolute top-4 right-4 bg-[#8ec54d] text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {model.price}
-                  </div>
                 </div>
                 
                 <div className="p-6 sm:p-8">
