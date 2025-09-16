@@ -89,7 +89,7 @@ export default function Navbar() {
           ))}
           <motion.a
             href="/contato"
-            className="inline-block bg-[#A3D068] text-black font-semibold py-2 px-4 rounded-lg hover:bg-[#6F9E3C] hover:text-[#FAFAFA] transition duration-300"
+            className="inline-block bg-[#6f9e3c] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#6F9E3C] hover:text-[#FAFAFA] transition duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -99,7 +99,7 @@ export default function Navbar() {
 
         {/* Mobile */}
         <button
-          className="md:hidden"
+          className="md:hidden hover:border-[#6F9E3C]"
           onClick={toggleMenu}
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isOpen}

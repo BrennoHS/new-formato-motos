@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
-  theme: { extend: {
+  theme: { 
+    extend: {
     colors: {
         "soft-green": "#A3D068",
         "dark-green": "#6F9E3C",
