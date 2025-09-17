@@ -1,121 +1,288 @@
-import { motion } from "framer-motion";
-import { Wrench, Clock, Phone } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { ChevronDown, Wrench, Clock, Phone, Mail } from 'lucide-react';
 
+// Animation variants
 const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 60 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.8, 
+      ease: "easeOut",
+      staggerChildren: 0.1
+    } 
+  },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  hidden: { opacity: 0, scale: 0.9, y: 30 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: { 
+      duration: 0.6, 
+      ease: "easeOut" 
+    } 
+  },
 };
 
-function AssistanceContent() {
+const floatingVariants = {
+  animate: {
+    y: [-10, 10, -10],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
+const scrollIndicatorVariants = {
+  animate: {
+    y: [0, 10, 0],
+    opacity: [0.5, 1, 0.5],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  }
+};
+
+export default function AssistanceContent() {
+  const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [servicesRef, servicesInView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [ctaRef, ctaInView] = useInView({ threshold: 0.2, triggerOnce: true });
+
+  const services = [
+    {
+      icon: Wrench,
+      title: "Manutenção Preventiva",
+      text: "Revisões regulares para garantir o desempenho ideal da sua moto."
+    },
+    {
+      icon: Clock,
+      title: "Suporte 24/7",
+      text: "Atendimento rápido e eficiente a qualquer hora do dia."
+    },
+    {
+      icon: Phone,
+      title: "Reparos Especializados",
+      text: "Reparo especializado é na própria loja, a assistência é marcada pelo WhatsApp."
+    }
+  ];
+
   return (
-    <main className="w-full">
+    <main className="w-full overflow-hidden">
       {/* Hero Section */}
       <motion.section
-        className="bg-gradient-to-br from-[#0d2a2c] to-[#1a1a1a] text-white py-28 md:py-36 w-full"
+        ref={heroRef}
+        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white min-h-screen flex items-center justify-center w-full"
         animate={{
           background: [
-            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 100%)",
-            "linear-gradient(135deg, #1a1a1a 0%, #0d2a2c 100%)",
-            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 100%)",
+            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+            "linear-gradient(135deg, #1a1a1a 0%, #0d2a2c 50%, #1a1a1a 100%)",
+            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
           ],
         }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="container mx-auto px-6 text-center max-w-4xl">
+        <div className="absolute inset-0 opacity-10">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238ec54d' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}
+          ></div>
+        </div>
+
+        <div className="z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            variants={floatingVariants}
+            animate="animate"
+            className="mb-8 sm:mb-12 lg:mb-16"
+          >
+            
+          </motion.div>
+
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-white via-[#8ec54d] to-white bg-clip-text text-transparent leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.8 }}
           >
             Assistência Formato Motos
           </motion.h1>
+
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl mb-10 text-gray-200"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed px-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
             Suporte técnico especializado para sua moto elétrica
           </motion.p>
-          <motion.a
-            href="#contact"
-            className="inline-block bg-[#8ec54d] text-black font-semibold py-4 px-10 rounded-2xl shadow-lg hover:bg-[#6f9e3c] transition-transform duration-200 ease-in-out text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
           >
-            Agendar Assistência
-          </motion.a>
+            <motion.a
+              href="https://wa.me/35988004965?text=Olá,%20tenho%20interesse%20em%20agendar%20uma%20assistência%20para%20minha%20moto%20elétrica.%20Poderiam%20me%20enviar%20mais%20detalhes?"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center hover:text-white"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(142, 197, 77, 0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Phone className="w-5 h-5" />
+              Agendar pelo WhatsApp
+            </motion.a>
+            
+            <motion.a
+              href="#services"
+              className="inline-flex items-center gap-2 border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Ver Serviços
+            </motion.a>
+          </motion.div>
+
+          <motion.div
+            variants={scrollIndicatorVariants}
+            animate="animate"
+            className="absolute bottom-24 left-1/2 transform -translate-x-1/2"
+          >
+            <ChevronDown className="w-8 h-8 text-[#8ec54d]" />
+          </motion.div>
         </div>
       </motion.section>
 
       {/* Services Section */}
       <motion.section
         id="services"
-        className="w-full py-20 bg-[#8ec54d]"
+        ref={servicesRef}
+        className="w-full"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate={servicesInView ? "visible" : "hidden"}
         variants={sectionVariants}
       >
-        <div className="container mx-auto px-6 max-w-7xl">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14 text-[#0d2a2c]">
-            Nossos Serviços de Assistência
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              { title: "Manutenção Preventiva", text: "Revisões regulares para garantir o desempenho ideal da sua moto.", icon: <Wrench className="w-14 h-14 mx-auto mb-6 text-[#8ec54d]" /> },
-              { title: "Suporte 24/7", text: "Atendimento rápido e eficiente a qualquer hora do dia.", icon: <Clock className="w-14 h-14 mx-auto mb-6 text-[#8ec54d]" /> },
-              { title: "Reparos Especializados", text: "Técnicos capacitados para resolver qualquer problema técnico.", icon: <Phone className="w-14 h-14 mx-auto mb-6 text-[#8ec54d]" /> },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-50 p-8 rounded-2xl shadow-md text-center border border-gray-200"
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-              >
-                {item.icon}
-                <h3 className="text-xl md:text-2xl font-semibold mb-4 text-[#0d2a2c]">{item.title}</h3>
-                <p className="text-gray-600 text-base md:text-lg">{item.text}</p>
-              </motion.div>
-            ))}
+        <div className="bg-gradient-to-br from-[#8ec54d] via-[#7fb045] to-[#8ec54d] w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4 text-white"
+              variants={cardVariants}
+            >
+              Nossos Serviços de Assistência
+            </motion.h2>
+            <motion.p 
+              className="text-lg sm:text-xl text-center mb-12 sm:mb-16 text-white/90 max-w-3xl mx-auto"
+              variants={cardVariants}
+            >
+              Soluções especializadas para manter sua moto elétrica em perfeitas condições
+            </motion.p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+              {services.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    className="bg-white/95 backdrop-blur-sm p-8 sm:p-10 rounded-2xl shadow-xl text-center group hover:bg-white"
+                    variants={cardVariants}
+                    whileHover={{ 
+                      scale: 1.05,
+                      y: -10,
+                      boxShadow: "0 25px 50px rgba(0,0,0,0.15)"
+                    }}
+                  >
+                    <motion.div
+                      className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                    </motion.div>
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 text-[#0d2a2c]">{item.title}</h3>
+                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg">{item.text}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </motion.section>
 
       {/* CTA Section */}
       <motion.section
-        className="bg-[#0d2a2c] text-white py-20 w-full"
+        ref={ctaRef}
+        className="bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white py-16 sm:py-20 lg:py-24 w-full relative"
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+        animate={ctaInView ? "visible" : "hidden"}
         variants={sectionVariants}
       >
-        <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Precisa de Assistência?</h2>
-          <p className="text-lg md:text-xl mb-10 text-gray-200">
-            Nossa equipe está pronta para ajudar com qualquer necessidade da sua moto elétrica.
-          </p>
-          <motion.a
-            href="#contact"
-            className="inline-block bg-[#8ec54d] text-black font-semibold py-4 px-10 rounded-2xl shadow-lg hover:bg-[#6f9e3c] transition-transform duration-200 text-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#8ec54d] rounded-full opacity-10 blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#8ec54d] rounded-full opacity-10 blur-3xl"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2 
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8"
+            variants={cardVariants}
           >
-            Entre em Contato
-          </motion.a>
+            Precisa de Assistência?
+          </motion.h2>
+          <motion.p 
+            className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-12 text-gray-300 leading-relaxed"
+            variants={cardVariants}
+          >
+            Nossa equipe está pronta para ajudar com qualquer necessidade da sua moto elétrica. Agende sua assistência pelo WhatsApp!
+          </motion.p>
+          
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
+            variants={cardVariants}
+          >
+            <motion.a
+              href="mailto:assistencia@formatomotos.com?subject=Agendamento de Assistência&body=Olá, gostaria de agendar uma assistência para minha moto elétrica. Poderiam me enviar mais detalhes?"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center hover:text-white"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(142, 197, 77, 0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail className="w-5 h-5" />
+              Entre em Contato
+            </motion.a>
+            
+            <motion.a
+              href="https://wa.me/35988004965?text=Olá,%20tenho%20interesse%20em%20agendar%20uma%20assistência%20para%20minha%20moto%20elétrica.%20Poderiam%20me%20enviar%20mais%20detalhes?"
+              className="inline-flex items-center gap-2 border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Phone className="w-5 h-5" />
+              Agendar pelo WhatsApp
+            </motion.a>
+          </motion.div>
         </div>
       </motion.section>
     </main>
   );
 }
-
-export default AssistanceContent;

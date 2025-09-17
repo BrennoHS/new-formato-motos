@@ -62,7 +62,7 @@ const scrollIndicatorVariants = {
 };
 
 function HomeContent() {
-  const [heroRef, heroInView] = useInView({ threshold: 0.3, triggerOnce: true });
+  const [heroRef] = useInView({ threshold: 0.3, triggerOnce: true });
   const [featuresRef, featuresInView] = useInView({ threshold: 0.2, triggerOnce: true });
   const [modelsRef, modelsInView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [testimonialsRef, testimonialsInView] = useInView({ threshold: 0.2, triggerOnce: true });
@@ -114,19 +114,19 @@ function HomeContent() {
 
   const testimonials = [
     { 
-      quote: "A Volt mudou completamente minha rotina urbana! Economia e sustentabilidade em perfeita harmonia.", 
-      name: "João Silva",
-      role: "Empresário"
+      quote: "A LYS-30 mudou minha rotina! Economia e sustentabilidade em perfeita harmonia.", 
+      name: "Janaina Soares",
+      role: "Fisioterapeuta"
     },
     { 
-      quote: "Performance incrível nas estradas! A Thunder superou todas as minhas expectativas.", 
-      name: "Maria Oliveira",
-      role: "Motociclista"
+      quote: "Performance incrível nas estradas! A Falcão 86 superou todas as minhas expectativas. ", 
+      name: "Telma Teixeira",
+      role: "Educadora Física"
     },
     { 
-      quote: "Design único e sustentável. Recebo elogios onde quer que eu vá com minha Spark.", 
-      name: "Pedro Santos",
-      role: "Designer"
+      quote: "Design único e sustentável. Recebo elogios onde quer que eu vá com minha Falcão 86.", 
+      name: "Kayo Nascimento",
+      role: "Professor"
     },
   ];
 
@@ -163,7 +163,7 @@ function HomeContent() {
           >
             <motion.img
               src={formatoImg}
-              className="w-64 sm:w-80 md:w-96 lg:w-[46rem] max-w-full h-auto mx-auto cursor-pointer transition-all duration-500 ease-in-out hover:drop-shadow-2xl"
+              className="w-96 sm:w-80 md:w-96 lg:w-[46rem] max-w-full h-auto mx-auto cursor-pointer transition-all duration-500 ease-in-out hover:drop-shadow-2xl"
               alt="Logo Formato Motos"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -201,7 +201,7 @@ function HomeContent() {
           >
             <motion.a
               href="#modelos"
-              className="inline-block bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 ease-in-out shadow-lg hover:shadow-2xl hover:text-white text-base sm:text-lg w-full sm:w-auto text-center"
+              className="inline-block bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 ease-in-out shadow-lg hover:shadow-2xl hover:text-white text-base sm:text-lg sm:w-auto text-center"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(142, 197, 77, 0.3)"
@@ -213,7 +213,7 @@ function HomeContent() {
             
             <motion.a
               href="#explore"
-              className="inline-block border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 ease-in-out text-base sm:text-lg w-full sm:w-auto text-center"
+              className="inline-block border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 ease-in-out text-base sm:text-lg sm:w-auto text-center"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
@@ -228,7 +228,7 @@ function HomeContent() {
           <motion.div
             variants={scrollIndicatorVariants}
             animate="animate"
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute  bottom-24 left-1/2 transform -translate-x-1/2"
           >
             <ChevronDown className="w-8 h-8 text-[#8ec54d]" />
           </motion.div>
@@ -447,7 +447,7 @@ function HomeContent() {
             variants={cardVariants}
           >
             <motion.a
-              href="#contact"
+              href="mailto:formatomotos@gmail.com?subject=Gostaria de saber mais sobre a moto elétrica&body=Olá, vi a moto (Especifique o Modelo) no site e tenho interesse em saber mais sobre as especificações, preço e condições. Poderiam me enviar mais informações?"
               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center hover:text-white"
               whileHover={{ 
                 scale: 1.05,
@@ -460,7 +460,7 @@ function HomeContent() {
             </motion.a>
             
             <motion.a
-              href="tel:+5511999999999"
+              href="https://wa.me/35988004965?text=Ol%C3%A1,%20vi%20a%20moto%20no%20site%20e%20tenho%20interesse%20em%20saber%20mais%20sobre%20as%20especifica%C3%A7%C3%B5es,%20pre%C3%A7o%20e%20condi%C3%A7%C3%B5es.%20Poderiam%20me%20enviar%20mais%20informa%C3%A7%C3%B5es?"
               className="inline-flex items-center gap-2 border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,
@@ -469,7 +469,7 @@ function HomeContent() {
               whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-5 h-5" />
-              (11) 99999-9999
+              (35) 98800-4965
             </motion.a>
           </motion.div>
         </div>

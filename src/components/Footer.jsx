@@ -35,13 +35,17 @@ function Footer() {
             />
           </Link>
           <p className="text-sm text-gray-400 max-w-xs">
-            Formato Motos: liderando a revolução da mobilidade elétrica com sustentabilidade e performance.
+            Formato Motos: liderando a revolução da mobilidade elétrica com sustentabilidade e performance. <br /> <br />
+            CNPJ 03.399.208/0001-13 <br />
+            formatomotos@gmail.com <br />
+            (35) 98800-4965 <br />
+            R. Dr. Melo Viana, 11 - Santa Teresinha, Lavras - MG, 37200-000
           </p>
         </motion.div>
 
         {/* Navigation Links */}
         <motion.div variants={footerVariants}>
-          <h3 className="text-lg font-semibold text-[#A3D068] mb-4">Navegação</h3>
+          <h3 className="text-lg font-semibold text-[#A3D068] mb-4 pt-6">Navegação</h3>
           <ul className="space-y-2">
             {[
               { name: "Início", path: "/" },
@@ -73,7 +77,7 @@ function Footer() {
 
         {/* Newsletter and Social Media */}
         <motion.div variants={footerVariants}>
-          <h3 className="text-lg font-semibold text-[#A3D068] mb-4">Fique Conectado</h3>
+          <h3 className="text-lg font-semibold text-[#A3D068] mb-4 pt-6">Fique Conectado</h3>
           <div className="mb-6">
             <label htmlFor="newsletter" className="block text-sm text-gray-400 mb-2">
               Inscreva-se na nossa newsletter
@@ -120,10 +124,10 @@ function Footer() {
 
       {/* Bottom Bar */}
       <motion.div
-        className="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400"
+        className="mt-8 pt-8 h-[2vh] border-t border-gray-700 text-center text-sm text-gray-400"
         variants={footerVariants}
       >
-        <p>&copy; {new Date().getFullYear()} Formato Motos. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()}  Formato Motos. Todos os direitos reservados.</p>
       </motion.div>
     </motion.footer>
   );
