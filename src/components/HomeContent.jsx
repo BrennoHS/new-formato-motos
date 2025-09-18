@@ -163,7 +163,7 @@ function HomeContent() {
           >
             <motion.img
               src={formatoImg}
-              className="w-96 sm:w-80 md:w-96 lg:w-[46rem] max-w-full h-auto mx-auto cursor-pointer transition-all duration-500 ease-in-out hover:drop-shadow-2xl"
+              className="mt-18 w-96 sm:w-80 md:w-96 lg:w-[46rem] max-w-full h-auto mx-auto cursor-pointer transition-all duration-500 ease-in-out hover:drop-shadow-2xl"
               alt="Logo Formato Motos"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -185,7 +185,7 @@ function HomeContent() {
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl lg:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed px-4"
+            className="text-lg sm:text-xl md:text-2xl lg:text-2xl mb-8 sm:mb-10 text-gray-300 max-w-4xl mx-auto leading-relaxed px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}

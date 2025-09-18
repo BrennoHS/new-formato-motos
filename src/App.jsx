@@ -7,6 +7,7 @@ import Modelos from "./pages/Modelos"
 import Unidades from "./pages/Unidades"
 import Assistencia from "./pages/Assistencia"
 import Contato from "./pages/Contato"
+import WhatsappButton from "./components/WhatsappButton"
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>
+      <WhatsappButton/>
       <Footer />
     </Router>
   )
