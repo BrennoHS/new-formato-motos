@@ -366,7 +366,7 @@ function Models() {
 
       {/* Call to Action */}
       <motion.section
-        className="bg-gradient-to-br from-[#8ec54d] via-[#7fb045] to-[#8ec54d] text-white py-16 sm:py-20 lg:py-24"
+        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white text-white py-16 sm:py-20 lg:py-24"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -392,7 +392,7 @@ function Models() {
           >
             <motion.a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-white text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-2 bg-white text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center hover:text-black"
               whileHover={{ 
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
