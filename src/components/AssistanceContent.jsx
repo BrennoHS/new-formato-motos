@@ -32,9 +32,9 @@ const cardVariants = {
 
 const floatingVariants = {
   animate: {
-    y: [-10, 10, -10],
+    y: [-5, 5, -5],
     transition: {
-      duration: 6,
+      duration: 4,
       repeat: Infinity,
       ease: "easeInOut"
     }
@@ -81,7 +81,7 @@ export default function AssistanceContent() {
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
-        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white min-h-screen flex items-center justify-center w-full"
+        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white min-h-[100vh] flex items-center justify-center w-full"
         animate={{
           background: [
             "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
@@ -111,17 +111,18 @@ export default function AssistanceContent() {
 
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-[#8ec54d] to-white bg-clip-text text-transparent leading-tight"
-            variants={floatingVariants}
-            animate="animate"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
           >
             Assistência Formato Motos
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed px-4"
+            className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-300 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
           >
             Suporte técnico especializado para sua moto elétrica
           </motion.p>
@@ -130,7 +131,7 @@ export default function AssistanceContent() {
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
             <motion.a
               href="https://wa.me/35988004965?text=Olá,%20tenho%20interesse%20em%20agendar%20uma%20assistência%20para%20minha%20moto%20elétrica.%20Poderiam%20me%20enviar%20mais%20detalhes?"
@@ -226,14 +227,19 @@ export default function AssistanceContent() {
       {/* CTA Section */}
       <motion.section
         ref={ctaRef}
-        className="bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white py-16 sm:py-20 lg:py-24 w-full relative"
+        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white py-16 sm:py-20 lg:py-24 w-full relative"
         initial="hidden"
         animate={ctaInView ? "visible" : "hidden"}
         variants={sectionVariants}
       >
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#8ec54d] rounded-full opacity-10 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#8ec54d] rounded-full opacity-10 blur-3xl"></div>
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 5L90 25L90 75L50 95L10 75L10 25Z' fill='none' stroke='%238ec54d' stroke-width='1'/%3E%3C/svg%3E")`
+            }}
+          ></div>
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

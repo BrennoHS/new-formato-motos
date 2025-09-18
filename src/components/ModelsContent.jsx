@@ -252,7 +252,7 @@ function Models() {
       {/* Models Grid */}
       <motion.section
         ref={modelsRef}
-        className="py-16 sm:py-20 lg:py-24 bg-gray-50"
+        className="py-16 sm:py-20 lg:py-24 bg-[#1a1a1a]"
         initial="hidden"
         animate={modelsInView ? "visible" : "hidden"}
         variants={sectionVariants}
