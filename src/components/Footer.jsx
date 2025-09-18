@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Twitter, Mail } from "lucide-react";
+import { Instagram, Facebook, Mail } from "lucide-react";
 import formatoImg from "../assets/formato.png";
 
 // Animation variants
@@ -52,8 +52,7 @@ function Footer() {
               { name: "Sobre", path: "/sobre" },
               { name: "Modelos", path: "/modelos" },
               { name: "Assistência", path: "/assistencia" },
-              { name: "Unidades", path: "/unidades" },
-              { name: "Contato", path: "/contato" },
+              { name: "Unidade", path: "/unidades" },
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -102,9 +101,8 @@ function Footer() {
           </div>
           <div className="flex space-x-4">
             {[
-              { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-              { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-              { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+              { icon: Instagram, href: "https://www.instagram.com/formatomotos/?hl=pt", label: "Instagram" },
+              { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100054224751885", label: "Facebook" },
             ].map((social, index) => (
               <motion.a
                 key={index}

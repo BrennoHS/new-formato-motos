@@ -87,14 +87,7 @@ export default function Navbar() {
               </Link>
             </motion.div>
           ))}
-          <motion.a
-            href="/contato"
-            className="inline-block bg-[#6f9e3c] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#6F9E3C] hover:text-[#FAFAFA] transition duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Contato
-          </motion.a>
+          
         </div>
 
         {/* Mobile */}

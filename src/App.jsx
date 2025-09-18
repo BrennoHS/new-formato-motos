@@ -6,7 +6,6 @@ import Sobre from "./pages/Sobre"
 import Modelos from "./pages/Modelos"
 import Unidades from "./pages/Unidades"
 import Assistencia from "./pages/Assistencia"
-import Contato from "./pages/Contato"
 import WhatsappButton from "./components/WhatsappButton"
 
 export default function App() {
@@ -20,7 +19,6 @@ export default function App() {
           <Route path="/modelos" element={<Modelos />} />
           <Route path="/unidades" element={<Unidades />} />
           <Route path="/assistencia" element={<Assistencia />} />
-          <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>
       <WhatsappButton/>

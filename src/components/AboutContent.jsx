@@ -51,6 +51,13 @@ export default function AboutContent() {
         viewport={{ once: true }}
         variants={sectionVariants}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        animate={{
+        background: [
+        "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+        "linear-gradient(135deg, #1a1a1a 0%, #0d2a2c 50%, #1a1a1a 100%)",
+        "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+          ],
+        }}
       >
         <div className="absolute inset-0 opacity-10">
           <div 
