@@ -131,7 +131,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="p-6 sm:p-8">
-                  <h2 className="text-2xl font-bold mb-3 text-white group-hover:text-[#0d2a2c] transition-colors duration-300">
+                  <h2 className="text-2xl font-bold mb-3 text-white transition-colors duration-300">
                     {item.title}
                   </h2>
                   {typeof item.text === 'string' ? (
@@ -222,34 +222,35 @@ export default function AboutContent() {
           >
             <motion.div
               whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
+                scale: 1.05
               }}
               whileTap={{ scale: 0.95 }}
             >
               <Link
                 to="/modelos"
-                className="inline-flex items-center gap-2 bg-white text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-2 bg-white text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:text-[#8ec54d] transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(142, 197, 77, 0.3)"
+              }}
+              whileTap={{ scale: 0.95 }}
               >
                 <Mail className="w-5 h-5" />
                 Ver Modelos
               </Link>
             </motion.div>
-            <motion.div
+            <motion.a
+              href="https://wa.me/35988004965?text=Olá,%20tenho%20interesse%20em%20agendar%20uma%20assistência%20para%20minha%20moto%20elétrica.%20Poderiam%20me%20enviar%20mais%20detalhes?"
+              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-white hover:text-[#8ec54d] transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 10px 30px rgba(255,255,255,0.2)"
+                boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                to="/contato"
-                className="inline-flex items-center gap-2 border-2 border-white text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-white hover:text-[#8ec54d] transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
-              >
-                <Phone className="w-5 h-5" />
-                Fale Conosco
-              </Link>
-            </motion.div>
+              <Phone className="w-5 h-5" />
+              Fale Conosco
+            </motion.a>
           </motion.div>
         </div>
       </motion.section>

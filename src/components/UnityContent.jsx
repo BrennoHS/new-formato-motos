@@ -132,19 +132,6 @@ export default function UnidadesContent() {
               <MapPin className="w-5 h-5" />
               Ver Unidade
             </motion.a>
-            
-            <motion.a
-              href="https://wa.me/35988004965?text=Olá, gostaria de saber mais sobre as unidades da Formato Motos."
-              className="inline-flex items-center gap-2 border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Phone className="w-5 h-5" />
-              Contato
-            </motion.a>
           </motion.div>
 
           {/* Scroll Indicator */}
@@ -281,7 +268,7 @@ export default function UnidadesContent() {
               whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-5 h-5" />
-              (35) 98800-4965
+              Contato
             </motion.a>
           </motion.div>
         </div>

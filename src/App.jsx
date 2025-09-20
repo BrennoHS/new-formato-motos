@@ -7,6 +7,7 @@ import Modelos from "./pages/Modelos"
 import Unidades from "./pages/Unidades"
 import Assistencia from "./pages/Assistencia"
 import WhatsappButton from "./components/WhatsappButton"
+import ModelDetails from "./pages/ModelDetails";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/modelos" element={<Modelos />} />
           <Route path="/unidades" element={<Unidades />} />
           <Route path="/assistencia" element={<Assistencia />} />
+          <Route path="/modelos/:id" element={<ModelDetails />} />
         </Routes>
       </main>
       <WhatsappButton/>

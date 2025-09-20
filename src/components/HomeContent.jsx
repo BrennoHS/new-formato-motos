@@ -90,25 +90,25 @@ function HomeContent() {
       img: moto3, 
       title: "Modelo Volt", 
       text: "Perfeito para a cidade, com autonomia de até 150 km e design compacto.", 
-      href: "#volt" 
+      href: "/modelos/volt" 
     },
     { 
       img: moto3, 
       title: "Modelo Spark", 
       text: "Alta performance para aventuras urbanas e além, com tecnologia de ponta.", 
-      href: "#spark" 
+      href: "/modelos/spark" 
     },
     { 
       img: moto3, 
       title: "Modelo Thunder", 
       text: "Potência máxima para os amantes de velocidade e adrenalina.", 
-      href: "#thunder" 
+      href: "/modelos/thunder" 
     },
     { 
       img: moto3, 
       title: "Modelo Storm", 
       text: "Edição limitada com recursos premium e design exclusivo.", 
-      href: "#storm" 
+      href: "/modelos/storm" 
     },
   ];
 
@@ -191,7 +191,7 @@ function HomeContent() {
             transition={{ delay: 0.7, duration: 0.8 }}
           >
             <motion.a
-              href="#modelos"
+              href="/modelos"
               className="inline-block bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 ease-in-out shadow-lg hover:shadow-2xl hover:text-white text-base sm:text-lg sm:w-auto text-center"
               whileHover={{ 
                 scale: 1.05,

@@ -66,8 +66,8 @@ export default function AssistanceContent() {
     },
     {
       icon: Clock,
-      title: "Suporte 24/7",
-      text: "Atendimento rápido e eficiente a qualquer hora do dia."
+      title: "Suporte",
+      text: "Atendimento rápido e eficiente a qualquer hora do dia pelo WhatsApp."
     },
     {
       icon: Phone,

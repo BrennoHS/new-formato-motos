@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
 import { 
   Zap, 
   Battery, 
@@ -73,8 +73,6 @@ function Models() {
     {
       id: "eco",
       name: "Formato Eco",
-      category: "Básica",
-      price: "R$ 9.990",
       image: motoImages.eco,
       description: "Perfeita para iniciantes, econômica e confiável para o dia a dia urbano.",
       specs: {
@@ -90,8 +88,6 @@ function Models() {
     {
       id: "volt",
       name: "Formato Volt",
-      category: "Urbana",
-      price: "R$ 12.990",
       image: motoImages.volt,
       description: "Ideal para mobilidade urbana com design moderno e tecnologia avançada.",
       specs: {
@@ -107,8 +103,6 @@ function Models() {
     {
       id: "spark",
       name: "Formato Spark",
-      category: "Performance",
-      price: "R$ 18.990",
       image: motoImages.spark,
       description: "Alta performance para aventuras urbanas com tecnologia de ponta.",
       specs: {
@@ -124,8 +118,6 @@ function Models() {
     {
       id: "thunder",
       name: "Formato Thunder",
-      category: "Alta Performance",
-      price: "R$ 24.990",
       image: motoImages.thunder,
       description: "Potência máxima para os amantes de velocidade e adrenalina.",
       specs: {
@@ -141,8 +133,6 @@ function Models() {
     {
       id: "turbo",
       name: "Formato Turbo",
-      category: "Esportiva",
-      price: "R$ 28.990",
       image: motoImages.turbo,
       description: "Design esportivo agressivo com performance de alto nível.",
       specs: {
@@ -158,8 +148,6 @@ function Models() {
     {
       id: "storm",
       name: "Formato Storm",
-      category: "Premium",
-      price: "R$ 32.990",
       image: motoImages.storm,
       description: "Edição limitada com recursos premium e design exclusivo.",
       specs: {
@@ -173,8 +161,6 @@ function Models() {
       highlight: true
     }
   ];
-
-  const categories = ["Todas", "Básica", "Urbana", "Performance", "Alta Performance", "Esportiva", "Premium"];
 
   return (
     <main className="w-full overflow-hidden">
@@ -248,23 +234,37 @@ function Models() {
         </div>
       </motion.section>
 
-
+      <span>
+        <div className="w-full bg-[#8ec54d] h-1"></div>
+      </span>
+      
       {/* Models Grid */}
       <motion.section
         ref={modelsRef}
-        className="py-16 sm:py-20 lg:py-24 bg-[#1a1a1a]"
-        initial="hidden"
-        animate={modelsInView ? "visible" : "hidden"}
-        variants={sectionVariants}
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] relative"
+        animate={{
+          background: [
+            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+            "linear-gradient(135deg, #1a1a1a 0%, #0d2a2c 50%, #1a1a1a 100%)",
+            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+          ],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
+        <div className="absolute inset-0 opacity-5">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 5L90 25L90 75L50 95L10 75L10 25Z' fill='none' stroke='%238ec54d' stroke-width='1'/%3E%3C/svg%3E")`
+            }}
+          ></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
             {models.map((model, index) => (
               <motion.div
                 key={model.id}
-                className={`bg-white rounded-2xl shadow-xl overflow-hidden group relative ${
-                  model.highlight ? 'ring-2 ring-[#8ec54d]' : ''
-                }`}
+                className="bg-white rounded-2xl shadow-xl overflow-hidden group relative"
                 variants={cardVariants}
                 whileHover={{ 
                   scale: 1.02,
@@ -273,12 +273,6 @@ function Models() {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                {model.highlight && (
-                  <div className="absolute top-4 left-4 z-10 bg-[#8ec54d] text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-current" />
-                    Destaque
-                  </div>
-                )}
 
                 <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                   <motion.img
@@ -286,12 +280,6 @@ function Models() {
                     alt={model.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-[#0d2a2c] px-3 py-1 rounded-full text-lg font-bold">
-                    {model.price}
-                  </div>
-                  <div className="absolute bottom-4 left-4 bg-[#8ec54d] text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {model.category}
-                  </div>
                 </div>
 
                 <div className="p-6 sm:p-8">
@@ -323,7 +311,7 @@ function Models() {
                   </div>
 
                   {/* Features */}
-                  <div className="mb-6">
+                  <div className="mb-6 min-h-[85px] max-h-[85px]">
                     <h4 className="font-semibold text-[#0d2a2c] mb-3">Principais recursos:</h4>
                     <div className="flex flex-wrap gap-2">
                       {model.features.slice(0, 2).map((feature, idx) => (
@@ -333,28 +321,20 @@ function Models() {
                       ))}
                       {model.features.length > 2 && (
                         <span className="text-[#8ec54d] text-sm font-medium">
-                          +{model.features.length - 2} mais
+                          +{model.features.length - 2} recursos
                         </span>
                       )}
                     </div>
                   </div>
 
                   <div className="flex gap-3">
-                    <motion.button 
-                      className="flex-1 bg-[#8ec54d] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#6f9e3c] transition-all duration-300 flex items-center justify-center gap-2"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                    <Link
+                      to={`/modelos/${model.id}`}
+                      className="flex-1 bg-[#8ec54d] text-white font-semibold py-3 px-4 rounded-xl hover:bg-[#6f9e3c] transition-all duration-300 flex items-center justify-center gap-2 hover:text-white"
                     >
                       Ver Detalhes
                       <ArrowRight className="w-4 h-4" />
-                    </motion.button>
-                    <motion.button 
-                      className="border-2 border-[#8ec54d] text-[#8ec54d] font-semibold py-3 px-4 rounded-xl hover:bg-[#8ec54d] hover:text-white transition-all duration-300"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Test Drive
-                    </motion.button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -366,7 +346,15 @@ function Models() {
 
       {/* Call to Action */}
       <motion.section
-        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white text-white py-16 sm:py-20 lg:py-24"
+        className="relative bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c] text-white min-h-[60vh] flex items-center justify-center w-full"
+        animate={{
+          background: [
+            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+            "linear-gradient(135deg, #1a1a1a 0%, #0d2a2c 50%, #1a1a1a 100%)",
+            "linear-gradient(135deg, #0d2a2c 0%, #1a1a1a 50%, #0d2a2c 100%)",
+          ],
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -392,10 +380,10 @@ function Models() {
           >
             <motion.a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-white text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center hover:text-black"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#8ec54d] to-[#6f9e3c] text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:from-[#6f9e3c] hover:to-[#5a7d30] transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center hover:text-white"
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
+                boxShadow: "0 20px 40px rgba(142, 197, 77, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
             >
@@ -404,11 +392,11 @@ function Models() {
             </motion.a>
             
             <motion.a
-              href="tel:+5511999999999"
-              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-white hover:text-[#8ec54d] transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
+              href="https://wa.me/35988004965?text=Ol%C3%A1,%20vi%20a%20moto%20no%20site%20e%20tenho%20interesse%20em%20saber%20mais%20sobre%20as%20especifica%C3%A7%C3%B5es,%20pre%C3%A7o%20e%20condi%C3%A7%C3%B5es.%20Poderiam%20me%20enviar%20mais%20informa%C3%A7%C3%B5es?"
+              className="inline-flex items-center gap-2 border-2 border-[#8ec54d] text-[#8ec54d] font-bold py-4 px-8 sm:px-10 rounded-full hover:bg-[#8ec54d] hover:text-white transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 10px 30px rgba(255,255,255,0.2)"
+                boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
               }}
               whileTap={{ scale: 0.95 }}
             >

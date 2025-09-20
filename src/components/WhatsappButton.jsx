@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
   // --- INFORMAÇÕES CONFIGURÁVEIS ---
-  const phoneNumber = '5535999998888'; // Insira seu número com código do país (55 para Brasil)
+  const phoneNumber = '35988004965'; // Insira seu número com código do país (55 para Brasil)
   const message = 'Olá! Gostaria de mais informações sobre seus produtos.'; // Mensagem pré-definida
 
   // Codifica a mensagem para ser usada na URL

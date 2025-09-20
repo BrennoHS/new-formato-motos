@@ -77,28 +77,6 @@ function Footer() {
         {/* Newsletter and Social Media */}
         <motion.div variants={footerVariants}>
           <h3 className="text-lg font-semibold text-[#A3D068] mb-4 pt-6">Fique Conectado</h3>
-          <div className="mb-6">
-            <label htmlFor="newsletter" className="block text-sm text-gray-400 mb-2">
-              Inscreva-se na nossa newsletter
-            </label>
-            <div className="flex items-center gap-2">
-              <input
-                id="newsletter"
-                type="email"
-                placeholder="Seu e-mail"
-                className="bg-[#2a2a2a] text-white px-4 py-2 rounded-lg w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-[#A3D068]"
-                aria-label="Insira seu e-mail para a newsletter"
-              />
-              <motion.button
-                className="bg-[#A3D068] text-black p-2 rounded-lg hover:bg-[#6F9E3C] transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Inscrever-se na newsletter"
-              >
-                <Mail size={20} />
-              </motion.button>
-            </div>
-          </div>
           <div className="flex space-x-4">
             {[
               { icon: Instagram, href: "https://www.instagram.com/formatomotos/?hl=pt", label: "Instagram" },
