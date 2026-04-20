@@ -1,0 +1,317 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nav-offset: 5rem;
+  --nav-progress: 4px;
+  --bg: #f5f6f2;
+  --bg-soft: #eef3eb;
+  --bg-deep: #0f1716;
+  --bg-deeper: #0c1413;
+  --text: #12221f;
+  --text-soft: #56706a;
+  --text-on-dark: #d5e0dc;
+  --text-on-dark-soft: #b6c6c0;
+  --brand: #8ec54d;
+  --brand-deep: #6f9e3c;
+  --brand-soft: #a8d376;
+  --brand-lift: #c7e59f;
+  --brand-text: #5d7c39;
+  --brand-ink: #466128;
+  --font-body: "Gabarito", "Segoe UI", sans-serif;
+  --font-display: "Gabarito", "Segoe UI", sans-serif;
+  --glass-bg: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.36);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg);
+  scroll-behavior: smooth;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-offset: 6rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  background:
+    radial-gradient(1200px 540px at 74% -14%, rgba(142, 197, 77, 0.2), transparent 58%),
+    radial-gradient(980px 460px at -8% 14%, rgba(19, 33, 31, 0.1), transparent 62%),
+    var(--bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell-offset {
+  padding-top: calc(var(--nav-offset) + var(--nav-progress));
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+::selection {
+  background: rgba(142, 197, 77, 0.28);
+}
+
+.surface-glass {
+  background: rgba(248, 250, 245, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 32px rgba(13, 28, 25, 0.1);
+}
+
+.surface-glass-dark {
+  background: linear-gradient(140deg, rgba(13, 22, 20, 0.86), rgba(19, 31, 28, 0.7));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 30px rgba(5, 10, 9, 0.34);
+}
+
+.section-dark {
+  background: linear-gradient(150deg, #0f1716 0%, #172725 50%, #13211f 100%);
+}
+
+.section-light {
+  background: linear-gradient(155deg, #f8faf6 0%, #eef4ec 68%, #e7eee5 100%);
+}
+
+.hero-premium-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-premium-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 100%);
+}
+
+.hero-premium-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(74px);
+}
+
+.hero-premium-orb-a {
+  width: 32rem;
+  height: 32rem;
+  top: -10rem;
+  left: -7rem;
+  background: rgba(142, 197, 77, 0.25);
+}
+
+.hero-premium-orb-b {
+  width: 30rem;
+  height: 30rem;
+  right: -10rem;
+  top: 14%;
+  background: rgba(111, 158, 60, 0.19);
+}
+
+.hero-premium-orb-c {
+  width: 26rem;
+  height: 26rem;
+  bottom: -9rem;
+  left: 35%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-premium-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.08), transparent 44%),
+    linear-gradient(165deg, rgba(15, 23, 22, 0.9), rgba(22, 37, 34, 0.84) 54%, rgba(14, 24, 22, 0.93));
+}
+
+.hero-title-premium {
+  background: linear-gradient(92deg, #ffffff 0%, var(--brand-soft) 52%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-brand-primary {
+  background: linear-gradient(100deg, var(--brand) 0%, var(--brand-deep) 100%);
+  color: #ffffff;
+}
+
+.btn-brand-primary:hover {
+  background: linear-gradient(100deg, var(--brand-deep) 0%, var(--brand-ink) 100%);
+  color: #ffffff;
+}
+
+.btn-brand-secondary {
+  border: 2px solid var(--brand-soft);
+  color: var(--brand-lift);
+}
+
+.btn-brand-secondary:hover {
+  background: var(--brand);
+  color: #16302a;
+}
+
+.btn-brand-secondary-light {
+  border: 2px solid var(--brand-text);
+  color: var(--brand-text);
+}
+
+.btn-brand-secondary-light:hover {
+  background: var(--brand-text);
+  color: #ffffff;
+}
+
+.text-brand-strong {
+  color: #12221f;
+}
+
+.text-brand-soft {
+  color: #526a63;
+}
+
+.brand-divider {
+  background: linear-gradient(90deg, var(--brand-deep), var(--brand-soft), var(--brand-deep));
+}
+
+.section-light .text-gray-700 {
+  color: #4f665f;
+}
+
+.section-light .text-gray-600 {
+  color: #627a73;
+}
+
+.section-light .bg-gray-100 {
+  background-color: rgba(18, 34, 31, 0.06);
+}
+
+.section-dark .text-gray-300 {
+  color: var(--text-on-dark-soft);
+}
+
+.section-dark .text-gray-200 {
+  color: var(--text-on-dark);
+}
+
+.section-dark .text-white\/90 {
+  color: #d2ddd9;
+}
+
+.hero-content-shell {
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-viewport {
+  min-height: calc(100svh - (var(--nav-offset) + var(--nav-progress)));
+  min-height: calc(100dvh - (var(--nav-offset) + var(--nav-progress)));
+}
+
+.viewport-section {
+  min-height: calc(100svh - (var(--nav-offset) + var(--nav-progress)));
+  min-height: calc(100dvh - (var(--nav-offset) + var(--nav-progress)));
+}
+
+.section-micro {
+  min-height: clamp(22rem, 56svh, 36rem);
+  min-height: clamp(22rem, 56dvh, 36rem);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-offset) + var(--nav-progress) + 0.9rem);
+}
+
+@media (max-height: 780px) {
+  .hero-compact {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .hero-logo {
+    width: min(74vw, 30rem) !important;
+  }
+
+  .hero-secondary-chips {
+    display: none;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .surface-glass,
+  .surface-glass-dark {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .hero-premium-grid {
+    background-size: 36px 36px;
+    opacity: 0.16;
+  }
+
+  .hero-premium-orb-a {
+    width: 24rem;
+    height: 24rem;
+    top: -9rem;
+    left: -8rem;
+  }
+
+  .hero-premium-orb-b {
+    width: 22rem;
+    height: 22rem;
+    right: -9rem;
+    top: 20%;
+  }
+
+  .hero-premium-orb-c {
+    width: 20rem;
+    height: 20rem;
+    left: 20%;
+    bottom: -8rem;
+  }
+}
