@@ -37,7 +37,7 @@ function ModelDetails() {
   if (!model) {
     return (
       <main className="w-full overflow-hidden">
-        <section className="min-h-[70vh] bg-gradient-to-br from-[#0f1716] via-[#172725] to-[#10201d] text-white flex items-center justify-center px-4">
+        <section className="hero-viewport section-dark text-white flex items-center justify-center px-4">
           <div className="max-w-xl text-center">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">Modelo não encontrado</h1>
             <p className="text-gray-300 mb-8">
@@ -62,7 +62,7 @@ function ModelDetails() {
       {/* Detailed Specifications */}
       <motion.section
         ref={specsRef}
-        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#0f1716] via-[#172725] to-[#10201d] relative"
+        className="py-16 sm:py-20 lg:py-24 section-dark relative"
         animate={{
           background: [
             "linear-gradient(135deg, #0f1716 0%, #172725 52%, #10201d 100%)",

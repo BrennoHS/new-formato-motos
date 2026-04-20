@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
-      <main className="app-shell-offset bg-[#0f1716]">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />

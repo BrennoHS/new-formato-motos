@@ -141,7 +141,7 @@ export default function AboutContent() {
 
       {/* Nossa História */}
       <motion.section
-        className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-[#0d2a2c] via-[#1a1a1a] to-[#0d2a2c]"
+        className="relative py-16 sm:py-20 lg:py-24 section-dark"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -172,7 +172,7 @@ export default function AboutContent() {
             ].map((event, index) => (
               <motion.div
                 key={index}
-                className="mb-8 bg-white/10 backdrop-blur-sm p-4 rounded-xl"
+                className="mb-8 surface-glass-dark p-4 rounded-xl border border-white/10"
                 variants={cardVariants}
                 whileHover={{ 
                   scale: 1.02,

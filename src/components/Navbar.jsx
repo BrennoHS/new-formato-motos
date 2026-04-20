@@ -49,18 +49,19 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      className={`
-        surface-glass-dark text-white fixed w-full z-50 h-20 md:h-24
-        transition-transform duration-500 ease-in-out
-        ${isVisible ? "translate-y-0" : "-translate-y-full"}
-      `}
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center h-full w-full">
+    <>
+      <nav
+        className={`
+          text-white fixed w-full z-50 h-20 md:h-24 px-3 md:px-6 pt-2 md:pt-3
+          transition-transform duration-500 ease-in-out
+          ${isVisible ? "translate-y-0" : "-translate-y-full"}
+        `}
+      >
+      <div className="surface-glass-dark relative max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center h-full w-full rounded-3xl border border-white/15">
         <Link to="/" className="text-2xl font-bold text-[#a8d376]">
           <motion.img
             src={formatoImg}
-            className="h-24 md:h-20 w-auto object-contain cursor-pointer transition-all duration-300 ease-in-out hover:drop-shadow-green-glow"
+            className="h-14 md:h-16 w-auto object-contain cursor-pointer transition-all duration-300 ease-in-out hover:drop-shadow-green-glow"
             alt="Logotipo Formato Motos"
             whileHover={{ scale: 1.05 }}
             loading="lazy"
@@ -103,6 +104,7 @@ export default function Navbar() {
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </motion.div>
         </button>
+
       </div>
 
       {/* Mobile Menu */}
@@ -138,15 +140,15 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* barra de progresso do scroll */}
-      <div className="fixed top-20 md:top-24 left-0 w-full h-1 bg-[#1f322d]/65 z-50">
-        <motion.div
-          className="h-full bg-gradient-to-r from-[#6f9e3c] via-[#a8d376] to-[#6f9e3c]"
-          initial={{ width: 0 }}
-          animate={{ width: `${scrollPercent}%` }}
-          transition={{ duration: 0.3 }}
-        />
-      </div>
-    </nav>
+      </nav>
+
+      <motion.div
+        className="fixed top-0 left-0 right-0 z-[60] h-[2px] bg-gradient-to-r from-[#6f9e3c] via-[#a8d376] to-[#6f9e3c]"
+        initial={{ scaleX: 0, opacity: 0.7 }}
+        animate={{ scaleX: scrollPercent / 100, opacity: 1 }}
+        style={{ transformOrigin: "left" }}
+        transition={{ duration: 0.25 }}
+      />
+    </>
   );
 }

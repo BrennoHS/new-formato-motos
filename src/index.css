@@ -4,7 +4,7 @@
 
 :root {
   --nav-offset: 5rem;
-  --nav-progress: 4px;
+  --nav-progress: 2px;
   --bg: #f5f6f2;
   --bg-soft: #eef3eb;
   --bg-deep: #0f1716;
@@ -19,10 +19,12 @@
   --brand-lift: #c7e59f;
   --brand-text: #5d7c39;
   --brand-ink: #466128;
+  --radius-xl: 1.6rem;
+  --radius-2xl: 2.1rem;
+  --shadow-soft: 0 16px 40px rgba(11, 23, 21, 0.11);
+  --shadow-strong: 0 26px 56px rgba(7, 14, 13, 0.32);
   --font-body: "Gabarito", "Segoe UI", sans-serif;
   --font-display: "Gabarito", "Segoe UI", sans-serif;
-  --glass-bg: rgba(255, 255, 255, 0.58);
-  --glass-border: rgba(255, 255, 255, 0.36);
   font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
@@ -52,9 +54,21 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   background:
-    radial-gradient(1200px 540px at 74% -14%, rgba(142, 197, 77, 0.2), transparent 58%),
-    radial-gradient(980px 460px at -8% 14%, rgba(19, 33, 31, 0.1), transparent 62%),
+    radial-gradient(1320px 620px at 72% -14%, rgba(142, 197, 77, 0.19), transparent 56%),
+    radial-gradient(960px 460px at -10% 12%, rgba(19, 33, 31, 0.14), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), transparent 28%),
     var(--bg);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(16, 32, 29, 0.07) 0.55px, transparent 0.55px);
+  background-size: 3px 3px;
+  opacity: 0.22;
+  z-index: -1;
 }
 
 h1,
@@ -84,27 +98,37 @@ button {
 }
 
 .surface-glass {
-  background: rgba(248, 250, 245, 0.86);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.82);
-  box-shadow: 0 14px 32px rgba(13, 28, 25, 0.1);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.84), rgba(244, 248, 241, 0.72)),
+    rgba(248, 250, 245, 0.86);
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-xl);
 }
 
 .surface-glass-dark {
-  background: linear-gradient(140deg, rgba(13, 22, 20, 0.86), rgba(19, 31, 28, 0.7));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 12px 30px rgba(5, 10, 9, 0.34);
+  background: linear-gradient(145deg, rgba(12, 21, 20, 0.88), rgba(20, 33, 30, 0.72));
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: var(--shadow-strong);
+  border-radius: var(--radius-2xl);
 }
 
 .section-dark {
-  background: linear-gradient(150deg, #0f1716 0%, #172725 50%, #13211f 100%);
+  background:
+    radial-gradient(680px 320px at 16% 12%, rgba(142, 197, 77, 0.12), transparent 66%),
+    radial-gradient(820px 420px at 84% 82%, rgba(255, 255, 255, 0.05), transparent 72%),
+    linear-gradient(154deg, #0f1716 0%, #172725 50%, #13211f 100%);
 }
 
 .section-light {
-  background: linear-gradient(155deg, #f8faf6 0%, #eef4ec 68%, #e7eee5 100%);
+  background:
+    radial-gradient(820px 420px at 12% 10%, rgba(142, 197, 77, 0.12), transparent 66%),
+    radial-gradient(620px 280px at 92% 86%, rgba(18, 34, 31, 0.07), transparent 72%),
+    linear-gradient(158deg, #f8faf6 0%, #eef4ec 68%, #e7eee5 100%);
 }
 
 .hero-premium-bg {
@@ -168,11 +192,15 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 0 28px rgba(142, 197, 77, 0.2);
 }
 
 .btn-brand-primary {
   background: linear-gradient(100deg, var(--brand) 0%, var(--brand-deep) 100%);
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 24px rgba(111, 158, 60, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  letter-spacing: 0.01em;
 }
 
 .btn-brand-primary:hover {
@@ -183,6 +211,9 @@ button {
 .btn-brand-secondary {
   border: 2px solid var(--brand-soft);
   color: var(--brand-lift);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  letter-spacing: 0.01em;
 }
 
 .btn-brand-secondary:hover {
@@ -193,6 +224,7 @@ button {
 .btn-brand-secondary-light {
   border: 2px solid var(--brand-text);
   color: var(--brand-text);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.18));
 }
 
 .btn-brand-secondary-light:hover {
@@ -236,22 +268,14 @@ button {
   color: #d2ddd9;
 }
 
-.hero-content-shell {
-  border-radius: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
 .hero-viewport {
-  min-height: calc(100svh - (var(--nav-offset) + var(--nav-progress)));
-  min-height: calc(100dvh - (var(--nav-offset) + var(--nav-progress)));
+  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 .viewport-section {
-  min-height: calc(100svh - (var(--nav-offset) + var(--nav-progress)));
-  min-height: calc(100dvh - (var(--nav-offset) + var(--nav-progress)));
+  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 .section-micro {

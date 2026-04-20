@@ -71,7 +71,7 @@ export default function UnidadesContent() {
           <div className="hero-premium-vignette" />
         </div>
 
-        <div className="z-10 w-full mx-auto text-center">
+        <div className="z-10 w-full mx-auto text-center px-4 sm:px-6 lg:px-8">
 
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight"

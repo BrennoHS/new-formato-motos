@@ -116,81 +116,80 @@ function HomeContent() {
           <div className="hero-premium-vignette" />
         </div>
 
-        <div className="hero-compact z-10 w-full mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
+        <div className="hero-compact z-10 w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center mt-6 sm:mt-8 lg:mt-10">
+            <div className="text-center lg:text-left">
+              <p className="inline-block mb-4 text-[0.7rem] sm:text-xs tracking-[0.16em] uppercase text-[#c7d9d3] border border-white/20 rounded-full px-4 py-1.5">
+                Mobilidade Elétrica Premium
+              </p>
 
-          <motion.div
-            variants={floatingVariants}
-            animate="animate"
-            className="mb-7"
-          >
-            <motion.img
-              src={formatoImg}
-              className="hero-logo w-[clamp(23rem,92vw,62rem)] h-auto mx-auto"
-              alt="Logo Formato Motos"
-              initial={{ opacity: 0, scale: 0.88 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-              style={{ filter: "drop-shadow(0 0 28px rgba(142, 197, 77, 0.45))" }}
-            />
-          </motion.div>
-
-          <motion.h1
-            className="text-[1.5rem] sm:text-[1.95rem] md:text-[2.35rem] font-bold leading-[1.08]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.8 }}
-          >
-            O Futuro da Mobilidade
-            <span className="block hero-title-premium">
-              com presença e elegância
-            </span>
-          </motion.h1>
-
-          <motion.p
-            className="mt-3 text-[0.8rem] sm:text-[0.88rem] text-[#c8d4d1] max-w-lg leading-relaxed"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.8 }}
-          >
-            Descubra motos elétricas de alta performance com design refinado, baixo custo operacional e tecnologia que valoriza cada trajeto.
-          </motion.p>
-
-          <div className="hero-secondary-chips mt-3 flex flex-wrap items-center justify-center gap-2 text-[0.64rem] sm:text-[0.68rem] text-[#c6d8d3]">
-            <span className="rounded-full border border-white/20 px-3 py-1">Autonomia até 250 km</span>
-            <span className="rounded-full border border-white/20 px-3 py-1">Garantia de 2 anos</span>
-            <span className="rounded-full border border-white/20 px-3 py-1">Zero emissão</span>
-          </div>
-
-          <motion.div
-            className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            <motion.div
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 20px 38px rgba(142, 197, 77, 0.22)"
-              }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Link
-                to="/modelos"
-                className="inline-block btn-brand-primary font-bold py-2.5 px-5 rounded-full transition-all duration-300 text-xs sm:text-sm text-center"
+              <motion.h1
+                className="text-[1.7rem] sm:text-[2.2rem] md:text-[2.9rem] font-bold leading-[1.04]"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.8 }}
               >
-                Explore Nossos Modelos
-              </Link>
-            </motion.div>
+                O Futuro da Mobilidade
+                <span className="block hero-title-premium">com presença e elegância</span>
+              </motion.h1>
 
-            <motion.a
-              href="#explore"
-              className="inline-block btn-brand-secondary font-bold py-2.5 px-5 rounded-full transition-all duration-300 text-xs sm:text-sm text-center"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              <motion.p
+                className="mt-4 text-[0.9rem] sm:text-[1rem] text-[#c8d4d1] max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
+                Descubra motos elétricas de alta performance com design refinado, baixo custo operacional e tecnologia que valoriza cada trajeto.
+              </motion.p>
+
+              <div className="hero-secondary-chips mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[0.68rem] sm:text-[0.72rem] text-[#c6d8d3]">
+                <span className="rounded-full border border-white/20 px-3 py-1">Autonomia até 250 km</span>
+                <span className="rounded-full border border-white/20 px-3 py-1">Garantia de 2 anos</span>
+                <span className="rounded-full border border-white/20 px-3 py-1">Zero emissão</span>
+              </div>
+
+              <motion.div
+                className="mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45, duration: 0.8 }}
+              >
+                <Link
+                  to="/modelos"
+                  className="inline-flex items-center justify-center btn-brand-primary font-bold py-3 px-6 rounded-full transition-all duration-300 text-sm"
+                >
+                  Explore Nossos Modelos
+                </Link>
+
+                <motion.a
+                  href="#explore"
+                  className="inline-flex items-center justify-center btn-brand-secondary font-bold py-3 px-6 rounded-full transition-all duration-300 text-sm"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  Saiba Mais
+                </motion.a>
+              </motion.div>
+            </div>
+
+            <motion.div
+              variants={floatingVariants}
+              animate="animate"
+              className="relative flex items-center justify-center mt-2 sm:mt-4 lg:mt-6"
             >
-              Saiba Mais
-            </motion.a>
-          </motion.div>
+              <div className="absolute w-[min(84vw,34rem)] h-[min(84vw,34rem)] rounded-full border border-white/20" />
+              <div className="absolute w-[min(66vw,26rem)] h-[min(66vw,26rem)] rounded-full border border-[#8ec54d]/35" />
+              <motion.img
+                src={formatoImg}
+                className="hero-logo relative z-10 w-[clamp(21rem,74vw,44rem)] h-auto"
+                alt="Logo Formato Motos"
+                initial={{ opacity: 0, scale: 0.88 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
+                style={{ filter: "drop-shadow(0 0 34px rgba(142, 197, 77, 0.45))" }}
+              />
+            </motion.div>
+          </div>
 
           {/* Scroll Indicator */}
           <motion.div
@@ -213,42 +212,39 @@ function HomeContent() {
         variants={sectionVariants}
       >
         <div className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="max-w-7xl mx-auto">
-            <motion.h2 
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4 text-brand-strong"
-              variants={cardVariants}
-            >
-              Por que escolher a Formato Motos?
-            </motion.h2>
-            <motion.p 
-              className="text-lg sm:text-xl text-center mb-12 sm:mb-16 text-brand-soft max-w-3xl mx-auto"
-              variants={cardVariants}
-            >
-              Inovação, sustentabilidade e performance se encontram em cada uma de nossas motos elétricas
-            </motion.p>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start">
+            <div>
+              <motion.h2
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-brand-strong text-center lg:text-left"
+                variants={cardVariants}
+              >
+                Por que escolher a Formato Motos?
+              </motion.h2>
+              <motion.p
+                className="text-lg sm:text-xl text-brand-soft max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
+                variants={cardVariants}
+              >
+                Inovação, sustentabilidade e performance se encontram em cada uma de nossas motos elétricas.
+              </motion.p>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            <div className="space-y-4 sm:space-y-5">
               {features.map((item, index) => {
                 const IconComponent = item.icon;
                 return (
                   <motion.div
                     key={index}
-                    className="surface-glass p-8 sm:p-10 rounded-2xl text-center group"
+                    className="rounded-3xl border border-[#dae5d9] bg-white/58 px-5 sm:px-6 py-5 sm:py-6 flex items-start gap-4 sm:gap-5"
                     variants={cardVariants}
-                    whileHover={{ 
-                      y: -8,
-                      boxShadow: "0 20px 40px rgba(15, 32, 29, 0.12)"
-                    }}
+                    whileHover={{ y: -4, boxShadow: "0 16px 30px rgba(15, 32, 29, 0.11)" }}
                   >
-                    <motion.div
-                      className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                    >
-                      <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                    </motion.div>
-                    <h3 className="text-xl sm:text-2xl font-bold mb-4 text-[#0d2a2c]">{item.title}</h3>
-                    <p className="text-gray-700 leading-relaxed text-base sm:text-lg">{item.text}</p>
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] flex items-center justify-center shrink-0">
+                      <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-bold mb-2 text-[#0d2a2c]">{item.title}</h3>
+                      <p className="text-gray-700 leading-relaxed text-base sm:text-lg">{item.text}</p>
+                    </div>
                   </motion.div>
                 );
               })}
