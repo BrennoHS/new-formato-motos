@@ -106,7 +106,7 @@ function HomeContent() {
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
-        className="relative section-dark text-white hero-viewport flex items-center justify-center w-full"
+        className="relative section-dark text-white hero-viewport flex items-center justify-center w-full overflow-hidden"
       >
         <div className="hero-premium-bg">
           <div className="hero-premium-grid" />
@@ -118,11 +118,7 @@ function HomeContent() {
 
         <div className="hero-compact z-10 w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center mt-6 sm:mt-8 lg:mt-10">
-            <div className="text-center lg:text-left">
-              <p className="inline-block mb-4 text-[0.7rem] sm:text-xs tracking-[0.16em] uppercase text-[#c7d9d3] border border-white/20 rounded-full px-4 py-1.5">
-                Mobilidade Elétrica Premium
-              </p>
-
+            <div className="order-2 lg:order-1 text-center lg:text-left mt-14 sm:mt-16 lg:mt-0">
               <motion.h1
                 className="text-[1.7rem] sm:text-[2.2rem] md:text-[2.9rem] font-bold leading-[1.04]"
                 initial={{ opacity: 0, y: 30 }}
@@ -175,13 +171,13 @@ function HomeContent() {
             <motion.div
               variants={floatingVariants}
               animate="animate"
-              className="relative flex items-center justify-center mt-2 sm:mt-4 lg:mt-6"
+              className="order-1 lg:order-2 relative flex items-center justify-center mb-4 sm:mb-3 lg:mb-0 mt-0 lg:mt-6"
             >
-              <div className="absolute w-[min(84vw,34rem)] h-[min(84vw,34rem)] rounded-full border border-white/20" />
-              <div className="absolute w-[min(66vw,26rem)] h-[min(66vw,26rem)] rounded-full border border-[#8ec54d]/35" />
+              <div className="absolute w-[min(64vw,16.5rem)] h-[min(64vw,16.5rem)] sm:w-[min(58vw,19rem)] sm:h-[min(58vw,19rem)] lg:w-[min(84vw,34rem)] lg:h-[min(84vw,34rem)] rounded-full border border-white/20" />
+              <div className="absolute w-[min(50vw,13rem)] h-[min(50vw,13rem)] sm:w-[min(44vw,15rem)] sm:h-[min(44vw,15rem)] lg:w-[min(66vw,26rem)] lg:h-[min(66vw,26rem)] rounded-full border border-[#8ec54d]/35" />
               <motion.img
                 src={formatoImg}
-                className="hero-logo relative z-10 w-[clamp(21rem,74vw,44rem)] h-auto"
+                className="hero-logo relative z-10 w-[clamp(14.6rem,66vw,20rem)] sm:w-[clamp(16.2rem,56vw,23.4rem)] lg:w-[clamp(23.5rem,80vw,50rem)] h-auto"
                 alt="Logo Formato Motos"
                 initial={{ opacity: 0, scale: 0.88 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -195,7 +191,7 @@ function HomeContent() {
           <motion.div
             variants={scrollIndicatorVariants}
             animate="animate"
-            className="hero-scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="hero-scroll-indicator hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
           >
             <ChevronDown className="w-8 h-8 text-[#8ec54d]" />
           </motion.div>
