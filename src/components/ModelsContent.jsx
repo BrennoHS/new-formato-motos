@@ -79,11 +79,12 @@ function Models() {
             className="mb-8"
           >
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight inline-flex items-center justify-center gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
+              <Gauge className="w-10 h-10 sm:w-12 sm:h-12 text-[#8ec54d]" />
               Nossos Modelos
             </motion.h1>
           </motion.div>

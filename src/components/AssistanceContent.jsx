@@ -91,21 +91,14 @@ export default function AssistanceContent() {
         </div>
 
         <div className="z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            variants={floatingVariants}
-            animate="animate"
-            className="mb-8 sm:mb-12 lg:mb-16"
-          >
-            
-          </motion.div>
-
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight"
+            className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight flex flex-col md:flex-row items-center justify-center text-center gap-1 sm:gap-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
           >
-            Assistência Formato Motos
+            <Wrench className="w-10 h-10 sm:w-12 sm:h-12 text-[#8ec54d] shrink-0" />
+            <span className="inline-block text-center">Assistência Formato Motos</span>
           </motion.h1>
 
           <motion.p
@@ -116,6 +109,23 @@ export default function AssistanceContent() {
           >
             Suporte técnico especializado para sua moto elétrica
           </motion.p>
+
+          <motion.div
+            className="flex flex-wrap justify-center gap-3 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+          >
+            <span className="surface-glass-dark inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
+              <Wrench className="w-4 h-4 text-[#8ec54d]" /> Revisão técnica
+            </span>
+            <span className="surface-glass-dark inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
+              <Clock className="w-4 h-4 text-[#8ec54d]" /> Atendimento ágil
+            </span>
+            <span className="surface-glass-dark inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm">
+              <Phone className="w-4 h-4 text-[#8ec54d]" /> Suporte direto
+            </span>
+          </motion.div>
 
           <motion.div
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16"

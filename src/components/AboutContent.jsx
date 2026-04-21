@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Building2 } from 'lucide-react';
 import { contactLinks } from "../data/siteConfig";
 
 // Animation variants
@@ -66,12 +66,13 @@ export default function AboutContent() {
             className="mb-8"
           >
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight"
+              className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight flex flex-col md:flex-row items-center justify-center text-center gap-1 sm:gap-2"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Sobre a Formato Motos
+              <Building2 className="w-10 h-10 sm:w-12 sm:h-12 text-[#8ec54d] shrink-0" />
+              <span className="inline-block text-center">Sobre a Formato Motos</span>
             </motion.h1>
           </motion.div>
           <motion.p
@@ -82,6 +83,17 @@ export default function AboutContent() {
           >
             Somos uma empresa brasileira apaixonada por mobilidade elétrica, oferecendo scooters inovadoras, sustentáveis e acessíveis para transformar o jeito que você se move.
           </motion.p>
+
+          <motion.div
+            className="flex flex-wrap justify-center gap-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.7 }}
+          >
+            <span className="surface-glass-dark px-4 py-2 rounded-full text-sm">Empresa brasileira</span>
+            <span className="surface-glass-dark px-4 py-2 rounded-full text-sm">Tecnologia acessível</span>
+            <span className="surface-glass-dark px-4 py-2 rounded-full text-sm">Mobilidade sustentável</span>
+          </motion.div>
         </div>
       </motion.section>
 

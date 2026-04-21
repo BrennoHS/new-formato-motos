@@ -173,8 +173,8 @@ function HomeContent() {
               animate="animate"
               className="order-1 lg:order-2 relative flex items-center justify-center mb-4 sm:mb-3 lg:mb-0 mt-2 sm:mt-3 lg:mt-6"
             >
-              <div className="absolute w-[min(64vw,16.5rem)] h-[min(64vw,16.5rem)] sm:w-[min(58vw,19rem)] sm:h-[min(58vw,19rem)] lg:w-[min(84vw,34rem)] lg:h-[min(84vw,34rem)] rounded-full border border-white/20" />
-              <div className="absolute w-[min(50vw,13rem)] h-[min(50vw,13rem)] sm:w-[min(44vw,15rem)] sm:h-[min(44vw,15rem)] lg:w-[min(66vw,26rem)] lg:h-[min(66vw,26rem)] rounded-full border border-[#8ec54d]/35" />
+              <div className="absolute w-[min(67vw,17.2rem)] h-[min(67vw,17.2rem)] sm:w-[min(61vw,20rem)] sm:h-[min(61vw,20rem)] lg:w-[min(87vw,35rem)] lg:h-[min(87vw,35rem)] rounded-full border border-white/20" />
+              <div className="absolute w-[min(58vw,15rem)] h-[min(58vw,15rem)] sm:w-[min(52vw,17rem)] sm:h-[min(52vw,17rem)] lg:w-[min(76vw,30.5rem)] lg:h-[min(76vw,30.5rem)] rounded-full border border-[#8ec54d]/35" />
               <motion.img
                 src={formatoImg}
                 className="hero-logo relative z-10 w-[clamp(14.6rem,66vw,20rem)] sm:w-[clamp(16.2rem,56vw,23.4rem)] lg:w-[clamp(23.5rem,80vw,50rem)] h-auto"
