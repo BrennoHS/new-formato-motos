@@ -154,7 +154,7 @@ export default function AssistanceContent() {
           <motion.div
             variants={scrollIndicatorVariants}
             animate="animate"
-            className="absolute bottom-24 left-1/2 transform -translate-x-1/2"
+            className="hidden md:block absolute bottom-24 left-1/2 transform -translate-x-1/2"
           >
             <ChevronDown className="w-8 h-8 text-[#8ec54d]" />
           </motion.div>

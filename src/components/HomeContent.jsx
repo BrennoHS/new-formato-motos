@@ -117,8 +117,8 @@ function HomeContent() {
         </div>
 
         <div className="hero-compact z-10 w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center mt-6 sm:mt-8 lg:mt-10">
-            <div className="order-2 lg:order-1 text-center lg:text-left mt-14 sm:mt-16 lg:mt-0">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-12 items-center mt-10 sm:mt-12 lg:mt-14">
+            <div className="order-2 lg:order-1 text-center lg:text-left mt-16 sm:mt-20 lg:mt-0">
               <motion.h1
                 className="text-[1.7rem] sm:text-[2.2rem] md:text-[2.9rem] font-bold leading-[1.04]"
                 initial={{ opacity: 0, y: 30 }}
@@ -171,7 +171,7 @@ function HomeContent() {
             <motion.div
               variants={floatingVariants}
               animate="animate"
-              className="order-1 lg:order-2 relative flex items-center justify-center mb-4 sm:mb-3 lg:mb-0 mt-0 lg:mt-6"
+              className="order-1 lg:order-2 relative flex items-center justify-center mb-4 sm:mb-3 lg:mb-0 mt-2 sm:mt-3 lg:mt-6"
             >
               <div className="absolute w-[min(64vw,16.5rem)] h-[min(64vw,16.5rem)] sm:w-[min(58vw,19rem)] sm:h-[min(58vw,19rem)] lg:w-[min(84vw,34rem)] lg:h-[min(84vw,34rem)] rounded-full border border-white/20" />
               <div className="absolute w-[min(50vw,13rem)] h-[min(50vw,13rem)] sm:w-[min(44vw,15rem)] sm:h-[min(44vw,15rem)] lg:w-[min(66vw,26rem)] lg:h-[min(66vw,26rem)] rounded-full border border-[#8ec54d]/35" />

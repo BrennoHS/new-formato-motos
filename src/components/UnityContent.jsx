@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ChevronDown, MapPin, Phone, Mail } from 'lucide-react';
+import { ChevronDown, MapPin, Phone, Mail, Store } from 'lucide-react';
 import { companyInfo, contactLinks } from "../data/siteConfig";
 
 // Animation variants
@@ -54,13 +54,10 @@ export default function UnidadesContent() {
       address: companyInfo.address,
       mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3700.7884309551793!2d-44.99775312462531!3d-21.145349180513486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b4a7d7b5a0d3b%3A0x5a5b5a5b5a5b5a5b!2sR.+Dr.+Melo+Viana%2C+11+-+Centro%2C+Lavras+-+MG%2C+37200-000%2C+Brazil!5e0!3m2!1sen!2sus!4v1726592126589" 
     },
-  ];
-
-  const locations2 = [
     { 
       title: "Lavras - Shopping Cidade da Serra", 
       text: "Nossa segunda loja, localizada no novo shopping de Lavras, oferece atendimento completo para vendas e test drives.", 
-      address: companyInfo.address,
+      address: "Avenida 18 de Maio, Chácara São Geraldo - Loja 1014 - Shopping Cidade da Serra / Lavras - MG",
       mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.149442466811!2d-45.0006122!3d-21.265551300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94caad005ed5ed73%3A0x5e0e4ddeecb0ae2f!2sShopping%20Cidade%20da%20Serra!5e0!3m2!1spt-BR!2sbr!4v1776801435892!5m2!1spt-BR!2sbr"
     },
   ];
@@ -83,12 +80,13 @@ export default function UnidadesContent() {
         <div className="z-10 w-full mx-auto text-center px-4 sm:px-6 lg:px-8">
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 hero-title-premium leading-tight inline-flex items-center gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Nossa Unidade
+            <Store className="w-10 h-10 sm:w-12 sm:h-12 text-[#8ec54d]" />
+            Nossas Unidades
           </motion.h1>
 
           <motion.p
@@ -124,7 +122,7 @@ export default function UnidadesContent() {
           <motion.div
             variants={scrollIndicatorVariants}
             animate="animate"
-            className="absolute bottom-24 left-1/2 transform -translate-x-1/2"
+            className="hidden md:block absolute bottom-24 left-1/2 transform -translate-x-1/2"
           >
             <ChevronDown className="w-8 h-8 text-[#8ec54d]" />
           </motion.div>
@@ -146,78 +144,47 @@ export default function UnidadesContent() {
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4 text-[#12221f]"
               variants={cardVariants}
             >
-              Nossa Loja
+              Nossas Lojas
             </motion.h2>
             <motion.p 
               className="text-lg sm:text-xl text-center mb-12 sm:mb-16 text-[#4f6560] max-w-3xl mx-auto"
               variants={cardVariants}
             >
-              Visite nossa unidade em Lavras e descubra o mundo das motos elétricas
+              Visite nossas unidades em Lavras e descubra o mundo das motos elétricas
             </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 lg:gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
               {locations.map((location, index) => (
                 <motion.div
                   key={index}
-                  className="surface-glass p-8 sm:p-10 rounded-2xl shadow-xl text-center group"
+                  className="surface-glass p-6 sm:p-7 rounded-2xl shadow-xl group"
                   variants={cardVariants}
                   whileHover={{ 
                     y: -10,
                     boxShadow: "0 20px 40px rgba(15, 32, 29, 0.12)"
                   }}
                 >
-                  <motion.div
-                    className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </motion.div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-[#0d2a2c]">{location.title}</h3>
-                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg mb-4">{location.text}</p>
-                  <p className="text-gray-600 mb-6">{location.address}</p>
+                  <div className="flex items-center gap-4 mb-5">
+                    <motion.div
+                      className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <MapPin className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                    </motion.div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0d2a2c]">{location.title}</h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg mb-3 text-left">{location.text}</p>
+                  <p className="text-gray-600 mb-5 text-left">{location.address}</p>
                   <iframe
                     src={location.mapSrc}
                     width="100%"
-                    height="300"
-                    style={{ border: 0 }}
+                    height="280"
+                    style={{ border: 0, borderRadius: "14px" }}
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 lg:gap-12">
-              {locations2.map((locations2, index) => (
-                <motion.div
-                  key={index}
-                  className="surface-glass p-8 sm:p-10 rounded-2xl shadow-xl text-center group"
-                  variants={cardVariants}
-                  whileHover={{ 
-                    y: -10,
-                    boxShadow: "0 20px 40px rgba(15, 32, 29, 0.12)"
-                  }}
-                >
-                  <motion.div
-                    className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                  </motion.div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-[#0d2a2c]">{locations2.title}</h3>
-                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg mb-4">{locations2.text}</p>
-                  <p className="text-gray-600 mb-6">{locations2.address}</p>
-                  <iframe
-                    src={locations2.mapSrc}
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
+                    title={location.title}
                   ></iframe>
                 </motion.div>
               ))}
