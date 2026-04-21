@@ -56,6 +56,15 @@ export default function UnidadesContent() {
     },
   ];
 
+  const locations2 = [
+    { 
+      title: "Lavras - Shopping Cidade da Serra", 
+      text: "Nossa segunda loja, localizada no novo shopping de Lavras, oferece atendimento completo para vendas e test drives.", 
+      address: companyInfo.address,
+      mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.149442466811!2d-45.0006122!3d-21.265551300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94caad005ed5ed73%3A0x5e0e4ddeecb0ae2f!2sShopping%20Cidade%20da%20Serra!5e0!3m2!1spt-BR!2sbr!4v1776801435892!5m2!1spt-BR!2sbr"
+    },
+  ];
+
   return (
     <main className="w-full overflow-hidden">
       {/* Hero Section */}
@@ -179,6 +188,40 @@ export default function UnidadesContent() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-8 lg:gap-12">
+              {locations2.map((locations2, index) => (
+                <motion.div
+                  key={index}
+                  className="surface-glass p-8 sm:p-10 rounded-2xl shadow-xl text-center group"
+                  variants={cardVariants}
+                  whileHover={{ 
+                    y: -10,
+                    boxShadow: "0 20px 40px rgba(15, 32, 29, 0.12)"
+                  }}
+                >
+                  <motion.div
+                    className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#8ec54d] to-[#6f9e3c] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  </motion.div>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-[#0d2a2c]">{locations2.title}</h3>
+                  <p className="text-gray-700 leading-relaxed text-base sm:text-lg mb-4">{locations2.text}</p>
+                  <p className="text-gray-600 mb-6">{locations2.address}</p>
+                  <iframe
+                    src={locations2.mapSrc}
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </motion.section>
@@ -223,6 +266,8 @@ export default function UnidadesContent() {
           >
             <motion.a
               href={contactLinks.mailSales}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-primary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,
@@ -236,6 +281,8 @@ export default function UnidadesContent() {
             
             <motion.a
               href={contactLinks.whatsappVisit}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-secondary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,

@@ -145,7 +145,7 @@ function HomeContent() {
               <div className="hero-secondary-chips mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[0.68rem] sm:text-[0.72rem] text-[#c6d8d3]">
                 <span className="rounded-full border border-white/20 px-3 py-1">Autonomia até 250 km</span>
                 <span className="rounded-full border border-white/20 px-3 py-1">Garantia de 2 anos</span>
-                <span className="rounded-full border border-white/20 px-3 py-1">Zero emissão</span>
+                <span className="rounded-full border border-white/20 px-3 py-1">Zero emissão de CO2</span>
               </div>
 
               <motion.div
@@ -414,6 +414,8 @@ function HomeContent() {
           >
             <motion.a
               href={contactLinks.mailSales}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-primary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,
@@ -427,6 +429,8 @@ function HomeContent() {
             
             <motion.a
               href={contactLinks.whatsappSales}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-secondary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,

@@ -234,6 +234,8 @@ export default function AboutContent() {
             </motion.div>
             <motion.a
               href={contactLinks.whatsappAssistance}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-secondary-light font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,

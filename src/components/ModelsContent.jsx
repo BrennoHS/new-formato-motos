@@ -94,7 +94,7 @@ function Models() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Descubra a linha completa de motos elétricas Formato. Cada modelo foi desenvolvido para atender diferentes necessidades e estilos de vida.
+            Descubra a linha completa de motos elétricas da Formato. Cada modelo foi desenvolvido para atender diferentes necessidades e estilos de vida.
           </motion.p>
 
           <motion.div
@@ -113,7 +113,7 @@ function Models() {
             </div>
             <div className="surface-glass-dark flex items-center gap-2 px-4 py-2 rounded-full">
               <Zap className="w-5 h-5 text-[#8ec54d]" />
-              <span className="text-sm font-medium">Zero Emissão</span>
+              <span className="text-sm font-medium">Zero Emissão de CO2</span>
             </div>
           </motion.div>
         </div>
@@ -261,6 +261,8 @@ function Models() {
             
             <motion.a
               href={contactLinks.whatsappSales}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-secondary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,

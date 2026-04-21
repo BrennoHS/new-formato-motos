@@ -56,7 +56,6 @@ const scrollIndicatorVariants = {
 export default function AssistanceContent() {
   const [heroRef] = useInView({ threshold: 0.3, triggerOnce: true });
   const [servicesRef, servicesInView] = useInView({ threshold: 0.2, triggerOnce: true });
-  const [ctaRef, ctaInView] = useInView({ threshold: 0.2, triggerOnce: true });
 
   const services = [
     {
@@ -126,6 +125,8 @@ export default function AssistanceContent() {
           >
             <motion.a
               href={contactLinks.whatsappAssistance}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-brand-primary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
               whileHover={{ 
                 scale: 1.05,
@@ -211,71 +212,6 @@ export default function AssistanceContent() {
               })}
             </div>
           </div>
-        </div>
-      </motion.section>
-
-      {/* CTA Section */}
-      <motion.section
-        ref={ctaRef}
-        className="relative section-dark text-white py-16 sm:py-20 lg:py-24 w-full section-micro"
-        initial="hidden"
-        animate={ctaInView ? "visible" : "hidden"}
-        variants={sectionVariants}
-      >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 5L90 25L90 75L50 95L10 75L10 25Z' fill='none' stroke='%238ec54d' stroke-width='1'/%3E%3C/svg%3E")`
-            }}
-          ></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8"
-            variants={cardVariants}
-          >
-            Precisa de Assistência?
-          </motion.h2>
-          <motion.p 
-            className="text-lg sm:text-xl lg:text-2xl mb-8 sm:mb-12 text-gray-300 leading-relaxed"
-            variants={cardVariants}
-          >
-            Nossa equipe está pronta para ajudar com qualquer necessidade da sua moto elétrica. Agende sua assistência pelo WhatsApp!
-          </motion.p>
-          
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
-            variants={cardVariants}
-          >
-            <motion.a
-              href={contactLinks.mailAssistance}
-              className="inline-flex items-center gap-2 btn-brand-primary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl text-base sm:text-lg w-full sm:w-auto justify-center"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(142, 197, 77, 0.3)"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="w-5 h-5" />
-              Entre em Contato
-            </motion.a>
-            
-            <motion.a
-              href={contactLinks.whatsappAssistance}
-              className="inline-flex items-center gap-2 btn-brand-secondary font-bold py-4 px-8 sm:px-10 rounded-full transition-all duration-300 text-base sm:text-lg w-full sm:w-auto justify-center"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 10px 30px rgba(142, 197, 77, 0.2)"
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Phone className="w-5 h-5" />
-              Agendar pelo WhatsApp
-            </motion.a>
-          </motion.div>
         </div>
       </motion.section>
     </main>
