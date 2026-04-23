@@ -7,6 +7,23 @@ const motosImages = Object.entries(images).map(([path, img]) => ({
 
 export const models = [
   {
+    id: "X11 Mini",
+    name: "X11 Mini",
+    image: motosImages.find(img => img.path.includes('X11 Mini')).src,
+    description: "Perfeita para iniciantes, econômica e confiável para o dia a dia urbano.",
+    specs: {
+      autonomia: "80 km",
+      velocidade: "32 km/h",
+      bateria: "48V 20Ah",
+      tempo_carga: "4-6h",
+      peso: "200 kg",
+      motor: "1000w",
+      freios: "Disco dianteiro e traseiro",
+    },
+    features: ["A prova d'água", "3 níveis de velocidade", "LED completo", "Painel digital", "Garantia 1 ano"],
+    highlight: false,
+  },
+  {
     id: "Falcão 86",
     name: "Falcão 86",
     image: motosImages.find(img => img.path.includes('Falcão 86')).src,
@@ -75,9 +92,9 @@ export const models = [
     highlight: true,
   },
   {
-    id: "LYS30-2",
-    name: "LYS30-2",
-    image: motosImages.find(img => img.path.includes('1')).src,
+    id: "LYS30-3",
+    name: "LYS30-3",
+    image: motosImages.find(img => img.path.includes('LYS30-3')).src,
     description: "Design esportivo agressivo com performance de alto nível.",
     specs: {
       autonomia: "50 km",
@@ -92,9 +109,9 @@ export const models = [
     highlight: false,
   },
   {
-    id: "Falcão 85",
-    name: "Falcão 85",
-    image: motosImages.find(img => img.path.includes('Falcão 85')).src,
+    id: "Falcão86",
+    name: "Falcão86",
+    image: motosImages.find(img => img.path.includes('Falcão86')).src,
     description: "Edição limitada com recursos premium e design exclusivo.",
     specs: {
       autonomia: "60 km",
@@ -129,7 +146,7 @@ export const models = [
     id: "DT3",
     name: "DT3",
     image: motosImages.find(img => img.path.includes('DT3')).src,
-    description: "Edição limitada com recursos premium e design exclusivo.",
+    description: "Potência máxima para os amantes de velocidade e adrenalina.",
     specs: {
       autonomia: "55 km",
       velocidade: "32 km/h",
@@ -146,7 +163,7 @@ export const models = [
     id: "X15",
     name: "X15",
     image: motosImages.find(img => img.path.includes('X15')).src,
-    description: "Edição limitada com recursos premium e design exclusivo.",
+    description: "Design esportivo agressivo com performance de alto nível.",
     specs: {
       autonomia: "90 km",
       velocidade: "32 km/h",
@@ -175,6 +192,23 @@ export const models = [
     },
     features: ["Bluetooth", "Trava giratóia", "Suspensão hidráulica dianteira e traseira", " Localizador do veículo com buzina", "Compartilhamento de chave pelo aplicativo Yadea", "2 níveis de velocidade", "Painel digital", "Garantia 1 ano"],
     highlight: true,
+  },
+  {
+    id: "LYS50",
+    name: "LYS50",
+    image: motosImages.find(img => img.path.includes('LYS50')).src,
+    description: "Perfeita para iniciantes, econômica e confiável para o dia a dia urbano.",
+    specs: {
+      autonomia: "80 km",
+      velocidade: "32 km/h",
+      bateria: "60V 30Ah",
+      tempo_carga: "4-6h",
+      peso: "100 kg",
+      motor: "1000W",
+      freios: "Disco dianteiro e traseiro",
+    },
+    features: ["Resistente à água", "LED Completo", "Painel digital", "Garantia 1 ano"],
+    highlight: false,
   },
 ];
 
