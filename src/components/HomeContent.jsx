@@ -2,9 +2,20 @@ import formatoImg from "../assets/formato.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-import { homeModels } from "../data/models";
+import { models } from "../data/models";
 import { companyInfo, contactLinks } from "../data/siteConfig";
 import { ChevronDown, Zap, Leaf, Palette, Star, Phone, Mail } from "lucide-react";
+
+// Prepare highlighted models for home page
+const homeModels = models
+  .filter(model => model.highlight)
+  .map(model => ({
+    ...model,
+    title: model.name,
+    text: model.description,
+    img: model.image,
+    href: `/modelos/${model.id}`
+  }));
 
 // Animation variants for sections
 const sectionVariants = {
@@ -279,9 +290,9 @@ function HomeContent() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {homeModels.map((model, index) => (
+            {homeModels?.map((model) => (
               <motion.div
-                key={index}
+                key={model.id}
                 className="surface-glass rounded-2xl overflow-hidden group"
                 variants={cardVariants}
                 whileHover={{ 

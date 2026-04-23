@@ -126,10 +126,6 @@ function ModelDetails() {
                   <span className="text-gray-200">Motor: {model.specs.motor}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Gauge className="w-5 h-5 text-[#8ec54d]" />
-                  <span className="text-gray-200">Torque: {model.specs.torque}</span>
-                </div>
-                <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-[#8ec54d]" />
                   <span className="text-gray-200">Freios: {model.specs.freios}</span>
                 </div>
