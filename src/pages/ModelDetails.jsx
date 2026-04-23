@@ -119,7 +119,7 @@ function ModelDetails() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-[#8ec54d]" />
-                  <span className="text-gray-200">Peso: {model.specs.peso}</span>
+                  <span className="text-gray-200">Suporta até: {model.specs.peso}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Zap className="w-5 h-5 text-[#8ec54d]" />
