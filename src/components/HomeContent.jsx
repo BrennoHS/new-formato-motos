@@ -150,8 +150,8 @@ function HomeContent() {
               </motion.p>
 
               <div className="hero-secondary-chips mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[0.68rem] sm:text-[0.72rem] text-[#c6d8d3]">
-                <span className="rounded-full border border-white/20 px-3 py-1">Autonomia até 250 km</span>
-                <span className="rounded-full border border-white/20 px-3 py-1">Garantia de 2 anos</span>
+                <span className="rounded-full border border-white/20 px-3 py-1">Autonomia até 90 km</span>
+                <span className="rounded-full border border-white/20 px-3 py-1">Garantia de até 2 anos</span>
                 <span className="rounded-full border border-white/20 px-3 py-1">Zero emissão de CO2</span>
               </div>
 
@@ -231,7 +231,7 @@ function HomeContent() {
                 className="text-lg sm:text-xl text-brand-soft max-w-2xl text-center lg:text-left mx-auto lg:mx-0"
                 variants={cardVariants}
               >
-                Inovação, sustentabilidade e performance se encontram em cada uma de nossas motos elétricas.
+                Inovação, sustentabilidade e performance se encontram em cada uma de nossas motos elétricas, com garantia em todos os modelos e assistência técnica própria para sua tranquilidade.
               </motion.p>
             </div>
 

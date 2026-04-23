@@ -119,7 +119,7 @@ export default function AboutContent() {
                     <li>Inovação: Tecnologia de ponta em cada scooter.</li>
                     <li>Sustentabilidade: Reduzir a pegada de carbono.</li>
                     <li>Qualidade: Até 2 anos de garantia em todos os modelos, com suporte excepcional.</li>
-                    <li>Liderança: Líderes de mercado em Lavras, oferecendo mobilidade para todos.</li>
+                    <li>Liderança: Líderes de mercado em Lavras e região, oferecendo mobilidade para todos.</li>
                   </ul>
                 )
               }

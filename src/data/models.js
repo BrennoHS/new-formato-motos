@@ -21,7 +21,7 @@ export const models = [
       freios: "Disco dianteiro e traseiro",
     },
     features: ["A prova d'água", "3 níveis de velocidade", "LED completo", "Painel digital", "Garantia 1 ano"],
-    highlight: false,
+    highlight: true,
   },
   {
     id: "Falcão 86",
@@ -38,7 +38,7 @@ export const models = [
       freios: "Disco dianteiro e traseiro",
     },
     features: ["A prova d'água","Controle por Bluetooth", "LED completo", "Painel digital", "Garantia 1 ano"],
-    highlight: false,
+    highlight: true,
   },
   {
     id: "YGT-10",
@@ -89,7 +89,7 @@ export const models = [
       freios: "Disco dianteiro e traseiro",
     },
     features: ["Resistente à água", "Bateria de lítio removível", "Painel digital", "Garantia 1 ano"],
-    highlight: true,
+    highlight: false,
   },
   {
     id: "LYS30-3",
@@ -191,7 +191,7 @@ export const models = [
       freios: "Disco dianteiro e traseiro",
     },
     features: ["Bluetooth", "Trava giratóia", "Suspensão hidráulica dianteira e traseira", " Localizador do veículo com buzina", "Compartilhamento de chave pelo aplicativo Yadea", "2 níveis de velocidade", "Painel digital", "Garantia 1 ano"],
-    highlight: true,
+    highlight: false,
   },
   {
     id: "LYS50",
