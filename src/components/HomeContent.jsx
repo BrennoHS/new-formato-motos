@@ -96,7 +96,7 @@ function HomeContent() {
 
   const testimonials = [
     { 
-      quote: "A LYS-30 mudou minha rotina! Economia e sustentabilidade em perfeita harmonia.", 
+      quote: "A LYS30-2 mudou minha rotina! Economia e sustentabilidade em perfeita harmonia.", 
       name: "Janaina Soares",
       role: "Fisioterapeuta"
     },
@@ -106,7 +106,7 @@ function HomeContent() {
       role: "Educadora Física"
     },
     { 
-      quote: "Design único e sustentável. Recebo elogios onde quer que eu vá com minha Falcão 86.", 
+      quote: "Design único e sustentável. Recebo elogios onde quer que eu vá com minha YGT-10.", 
       name: "Kayo Nascimento",
       role: "Professor"
     },
@@ -117,7 +117,7 @@ function HomeContent() {
       {/* Hero Section */}
       <motion.section
         ref={heroRef}
-        className="relative section-dark text-white hero-viewport flex items-center justify-center w-full overflow-hidden"
+        className="relative section-dark text-white hero-viewport flex items-center justify-center w-full overflow-hidden pt-24 md:pt-0"
       >
         <div className="hero-premium-bg">
           <div className="hero-premium-grid" />

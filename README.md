@@ -35,7 +35,7 @@ npm run dev
 ```
 
 4. Abra no navegador o endereco exibido no terminal (normalmente):
-
+![alt text](image.png)
 ```text
 http://localhost:5173
 ```

@@ -30,17 +30,6 @@ const cardVariants = {
   },
 };
 
-const floatingVariants = {
-  animate: {
-    y: [-5, 5, -5],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
-
 const scrollIndicatorVariants = {
   animate: {
     y: [0, 10, 0],
