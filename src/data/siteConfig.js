@@ -5,7 +5,7 @@ const buildMailto = (email, subject, body) =>
 
 export const companyInfo = {
   name: "Formato Motos",
-  cnpj: "03.399.208/0001-13",
+  cnpj: "63.902.083/0001-24",
   email: "formatomotos@gmail.com",
   assistanceEmail: "assistencia@formatomotos.com",
   phoneNumber: PHONE_NUMBER,

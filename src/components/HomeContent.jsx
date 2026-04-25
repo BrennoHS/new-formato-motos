@@ -106,7 +106,7 @@ function HomeContent() {
       role: "Educadora Física"
     },
     { 
-      quote: "Design único e sustentável. Recebo elogios onde quer que eu vá com minha YGT-10.", 
+      quote: "Design único e sustentável. Recebo elogios onde quer que eu vá com minha Falcão 86.", 
       name: "Kayo Nascimento",
       role: "Professor"
     },
